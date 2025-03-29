@@ -22,8 +22,8 @@ Dentro desse cenário, o jogador tem a oportunidade de assumir o controle dos ar
 * Mundo Rochoso
 * O Lago de Fogo
 
-## 5. Controles
-![Controles](https://photos.app.goo.gl/KLtqmbmxXJHMxitt6) 
+## 5. [Controles](https://photos.app.goo.gl/KLtqmbmxXJHMxitt6 "Controles") 
+![Controles](https://lh3.googleusercontent.com/keep-bbsk/AFgXFlIaevs337E_BaRTN9KUkW54b8FxV2AGdr_UuW6Wc9SbDGsm2xEfGWV3MLwEpSGAPUNdT5H3mkzI1bskcs6XopuDG4HMgJHCdrTjNtIgEGo14rETLRWcKg=s512)
 
 ## 6. Referências no Mercado
 * Mega Man X
@@ -32,5 +32,22 @@ Dentro desse cenário, o jogador tem a oportunidade de assumir o controle dos ar
 * Metroid
 * Dan the Man
 
+## 7. Referências Visuais
+
+* Arcanjos:
+  
+![Arcanjos](https://lh3.googleusercontent.com/keep-bbsk/AFgXFlIrBwqP2TIW-Yz09NxeYmEOOC9pSZtSCyK8Frsls5wcAAR93lRVqmS7lIYCMqlpL78ZZWw8givbXMMCTxYzxnJ8X3rF4J82SinuR2uMGG52NOy0bz4DYA=s512)
+
+* Aliados:
+
+![Aliados](https://lh3.googleusercontent.com/keep-bbsk/AFgXFlK4vFLAapGxBXVPEffoYtTtHyhTo13lXzpuXSA_I6U_MhHKR8eBl9MXlhoiJdyxZba5hGpmHyt02IAqexs9AcqJT3XjOc8mlTnzHCVDCwaQ7s1woJ-Quz8=s512)
+
+* Lúcifer:
+
+![Lucifer](https://lh3.googleusercontent.com/keep-bbsk/AFgXFlJfd7qyhbRMnaZHanMfFX7vOLLxcIpvEsdAuXbF0Ie2X4B3Psxe4-RjMMF25XZOi5DkU-swY7kQwZX_rltHrGlj3v_fhqvG-n5mUwJcxv05gZaT2x_PeQ=s512)
+
+* Lilith:
+
+![Lilith](https://github.com/user-attachments/assets/630362d7-ff01-418b-8b8d-e66c420075c4)
 
 
