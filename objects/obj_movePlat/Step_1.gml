@@ -1,18 +1,27 @@
-//se mexer em circulos
-dir += rotSpd;
+switch (moveType) {
+    
+    case "circle":
+        dir += rotSpd;
 
-//saber nossa posição alvo
-var _targetX = xstart+lengthdir_x(radius, dir);
-var _targetY = ystart+lengthdir_y(radius, dir);
+        var _targetX = xstart + lengthdir_x(radius, dir);
+        var _targetY = ystart + lengthdir_y(radius, dir);
 
-//guardar a xspd e a yspd
+        xspd = _targetX - x;
+        yspd = _targetY - y;
 
-xspd = _targetX - x;
-//xspd = 0;
-//yspd = _targetY - y;
-yspd = 0;
-
-//movimento
-
-x += xspd;
-y += yspd;
+        x = _targetX;
+        y = _targetY;
+    break;
+    
+    case "horizontal":
+        x = xstart + sin(current_time * 0.001 * moveSpeed) * moveDist;
+        xspd = x - xprevious;
+        yspd = 0;
+    break;
+    
+    case "vertical":
+        y = ystart + sin(current_time * 0.001 * moveSpeed) * moveDist;
+        yspd = y - yprevious;
+        xspd = 0;
+    break;
+}

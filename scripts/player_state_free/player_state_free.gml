@@ -1,4 +1,7 @@
 function player_state_free(){
+	if keyboard_check(ord("R")){
+		game_restart();
+	}
 	#region//sair de dentro das plataformas solidas que se posicionaram dentro do player na begin step
 		var _rightWall	= noone;
 		var _leftWall	= noone;
@@ -535,5 +538,5 @@ function player_state_free(){
 	#endregion
 
 	//mudar de estado para atacar
-	if attackKey {state = PLAYERSTATE.ATTACK_SLASH};
+	if attackKey && onGround {state = PLAYERSTATE.ATTACK_SLASH};
 }
