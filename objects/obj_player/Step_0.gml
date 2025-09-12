@@ -1,6 +1,7 @@
 // inputs
 	getControls()
 	
+	if instance_exists(obj_transition) exit;
 	
 switch(state){
 	case PLAYERSTATE.FREE: player_state_free(); break;
