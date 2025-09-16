@@ -71,6 +71,8 @@ yspd	= 0;
 crouching = false;
 getting_damage = false;
 hitByAttack = ds_list_create();
+attack = 1;
+damage = noone;
 
 //scripts de estado
 enum PLAYERSTATE{

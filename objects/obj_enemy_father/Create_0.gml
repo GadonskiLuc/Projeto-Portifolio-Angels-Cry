@@ -55,3 +55,7 @@ depth = 30;
 myFloorPlat = noone;
 forgetSemiSolid = noone;
 downSlopeSemiSolid = noone;
+
+//sprites
+spr_idle = noone;
+spr_damage = noone;

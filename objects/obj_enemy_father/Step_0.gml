@@ -2,7 +2,9 @@ if life <= 0{
 	instance_destroy(self);
 }else{
 	//checa se está na tela
-	if checkIfInViewport(x+20,y) || checkIfInViewport(x-20,y){
+	if checkIfInViewport(x+sprite_get_width(0),y) 
+	|| checkIfInViewport(x-sprite_get_width(0),y)
+	|| checkIfInViewport(x,y-sprite_get_height(0)){
 		active = true;
 	}else{
 		active = false;
@@ -13,7 +15,7 @@ if life <= 0{
 		//atacado
 		if attacked{
 			xspd = (vel*.25)*face*-1;
-			sprite_index = spr_enemy_idle_damage;
+			sprite_index = spr_damage;
 		}
 		
 		if damageTimer > 0{
@@ -230,13 +232,16 @@ if life <= 0{
 		
 		//controle de sprites
 		
-		if animation_end(spr_enemy_idle_damage){	
-			sprite_index = spr_enemy_idle;	
+		if animation_end(spr_damage){	
+			sprite_index = spr_idle;	
 			xspd = vel*-face;
 		}
 	}else{
 		//checa se o spawn do inimigo está na tela
-		if !checkIfInViewport(iniX,iniY) || !checkIfInViewport(iniX,iniY){
+		if !checkIfInViewport(iniX+sprite_get_width(0),iniY) 
+		&& !checkIfInViewport(iniX-sprite_get_width(0),iniY)
+		&& !checkIfInViewport(iniX,iniY-sprite_get_height(0))
+		&& !checkIfInViewport(iniX,iniY){
 			x = iniX;
 			y = iniY;
 		}
