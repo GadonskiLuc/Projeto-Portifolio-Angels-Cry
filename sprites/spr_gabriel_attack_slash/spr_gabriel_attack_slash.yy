@@ -45,7 +45,7 @@
     ],
     "top":0,
   },
-  "origin":7,
+  "origin":9,
   "parent":{
     "name":"Gabriel",
     "path":"folders/Sprites/Gabriel.yy",
@@ -108,7 +108,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":32,
+    "xorigin":21,
     "yorigin":50,
   },
   "swatchColours":null,

@@ -47,9 +47,13 @@ seeingPlayer = false;
 damageTimer  = 0;
 damageTime	= 30;
 attacked = false;
+damage = noone;
 
 face = 1;
 depth = 30;
+
+//variaveis de ataque
+dist = 50;
 
 //variaveis de colisao
 myFloorPlat = noone;
