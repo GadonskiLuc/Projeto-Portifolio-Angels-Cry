@@ -3,7 +3,7 @@ if(inv_timer <= 0){
 	inv_timer = inv_time;
 	pushTimer = pushTime;
 
-	//global.life -= 10;
+	global.life -= other.strength;
 	
 	setOnGround(false);
 	yspd = -5;

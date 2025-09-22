@@ -1,6 +1,5 @@
 function player_state_attack_slash(){
 	xspd = 0;
-	yspd += grav;
 
 	//atacano
 	if sprite_index != spr_gabriel_attack_slash{

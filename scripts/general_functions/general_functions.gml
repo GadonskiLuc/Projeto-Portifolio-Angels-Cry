@@ -16,6 +16,9 @@ function getControls(){
 	downKey			= keyboard_check(ord("S")) + gamepad_button_check(0, gp_padd);
 	downKey			= clamp(downKey, 0, 1)
 	
+	upKey			= keyboard_check(ord("W")) + gamepad_button_check(0, gp_padu);
+	upKey			= clamp(upKey, 0, 1)
+	
 	//action inputs
 	jumpKeyPressed	= keyboard_check_pressed(vk_space) + gamepad_button_check_pressed(0, gp_face1);
 	jumpKeyPressed	= clamp(jumpKeyPressed, 0, 1);

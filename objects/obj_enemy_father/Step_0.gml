@@ -136,8 +136,8 @@ if life <= 0{
 			}
 			//se chega numa beirada, dar a meia volta
 			if instance_exists(myFloorPlat){
-				if (myFloorPlat.object_index == obj_wall && !place_meeting(x+xspd,y+1,obj_wall))
-				|| (myFloorPlat.object_index == obj_semiSolidWall && !place_meeting(x+xspd,y+1,obj_semiSolidWall)){
+				if (myFloorPlat.object_index == obj_wall && !place_meeting(x+sign(xspd)*sprite_width,y+1,obj_wall))
+				|| (myFloorPlat.object_index == obj_semiSolidWall && !place_meeting(x+sign(xspd)*sprite_width,y+1,obj_semiSolidWall)){
 					xspd *= -1
 				}
 			}

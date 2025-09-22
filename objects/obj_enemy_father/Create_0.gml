@@ -47,10 +47,11 @@ seeingPlayer = false;
 damageTimer  = 0;
 damageTime	= 30;
 attacked = false;
+strength = 0;
 damage = noone;
 
 face = 1;
-depth = 30;
+depth = 1;
 
 //variaveis de ataque
 dist = 50;
