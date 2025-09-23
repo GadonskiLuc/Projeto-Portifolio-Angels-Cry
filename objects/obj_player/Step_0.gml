@@ -506,7 +506,8 @@ if(inv_timer > 0){
 
 	
 switch(state){
-	case "idle": //parado
+	#region //parado
+	case "idle": 
 		sprite_index = idleSpr;
 		
 		if rightKey || leftKey{
@@ -529,6 +530,7 @@ switch(state){
 			state = "attack";
 		}
 	break;
+	#endregion
 	
 	case "attack": //ataque
 		if onGround{
@@ -536,8 +538,8 @@ switch(state){
 		}
 		moveDir = 0;
 		//atacano
-		if sprite_index != spr_gabriel_attack_slash{
-			sprite_index = spr_gabriel_attack_slash;
+		if sprite_index != attackSpr{
+			sprite_index = attackSpr;
 			image_index = 0;
 			ds_list_clear(hitByAttack);
 		}
@@ -548,15 +550,38 @@ switch(state){
 			damage.father = id;
 		}
 
-		mask_index = spr_gabriel_idle;
-
 		if animation_end(){
-			sprite_index = spr_gabriel_idle;
+			sprite_index = idleSpr;
 			state = "idle"
 		}
 	break;
 	
-	case "moving": //movendo
+	#region air attack
+	case "air attack":
+		//atacano
+		if sprite_index != airAtkSpr{
+			sprite_index = airAtkSpr;
+			image_index = 0;
+			ds_list_clear(hitByAttack);
+		}
+		
+		if damage == noone{
+			damage = instance_create_layer(x, y+10, "Instances", obj_damage);
+			damage.image_xscale = face;
+			damage.father = id;
+		}
+		
+		if animation_end(){
+			state = "jumping";
+		}
+		if onGround{
+			state = "idle";
+		}
+	break;
+	#endregion
+	
+	#region //movendo
+	case "moving": 
 		//andando
 		if abs(xspd) > 0 {
 			sprite_index = walkSpr;
@@ -593,6 +618,7 @@ switch(state){
 			state = "attack";
 		}
 	break;
+	#endregion
 	
 	case "jumping": //pulando
 		sprite_index = jumpSpr;
@@ -604,7 +630,7 @@ switch(state){
 		if onGround{
 			state = "idle";
 		}else if attackKey{
-			state = "attack"
+			state = "air attack"
 		}
 	break;
 }

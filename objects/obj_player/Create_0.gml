@@ -53,6 +53,8 @@ walkSpr		= spr_gabriel_walk;
 runSpr		= spr_gabriel_walk;
 jumpSpr		= spr_gabriel_jump;
 crouchSpr	= spr_gabriel_crouch;
+attackSpr	= spr_gabriel_attack_slash;
+airAtkSpr	= spr_gabriel_attack_air;
 depth		= -30;
 
 

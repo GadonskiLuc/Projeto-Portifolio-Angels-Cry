@@ -1,5 +1,3 @@
-
-
 //tocando em alguem
 var _hitByAtkNow = ds_list_create();
 var _hits = instance_place_list(x,y,obj_enemy_father,_hitByAtkNow,false);

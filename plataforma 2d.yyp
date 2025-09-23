@@ -72,6 +72,7 @@
     {"id":{"name":"enemy_attack","path":"scripts/enemy_attack/enemy_attack.yy",},},
     {"id":{"name":"general_functions","path":"scripts/general_functions/general_functions.yy",},},
     {"id":{"name":"spr_damage_HB","path":"sprites/spr_damage_HB/spr_damage_HB.yy",},},
+    {"id":{"name":"spr_gabriel_attack_air","path":"sprites/spr_gabriel_attack_air/spr_gabriel_attack_air.yy",},},
     {"id":{"name":"spr_gabriel_attack_slash_HB","path":"sprites/spr_gabriel_attack_slash_HB/spr_gabriel_attack_slash_HB.yy",},},
     {"id":{"name":"spr_gabriel_attack_slash","path":"sprites/spr_gabriel_attack_slash/spr_gabriel_attack_slash.yy",},},
     {"id":{"name":"spr_gabriel_crouch","path":"sprites/spr_gabriel_crouch/spr_gabriel_crouch.yy",},},
