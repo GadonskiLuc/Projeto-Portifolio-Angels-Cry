@@ -26,7 +26,7 @@ function getControls(){
 	jumpKey			= keyboard_check(vk_space) + gamepad_button_check(0, gp_face1);
 	jumpKey			= clamp(jumpKey, 0, 1);
 	
-	runKey			= keyboard_check(ord("H")) + gamepad_button_check(0, gp_face3);
+	runKey			= keyboard_check(vk_shift) + gamepad_button_check(0, gp_face3);
 	runKey			= clamp(runKey, 0, 1);
 	
 	attackKey		= mouse_check_button_pressed(1);

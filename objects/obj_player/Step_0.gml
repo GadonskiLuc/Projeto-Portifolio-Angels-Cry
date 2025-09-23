@@ -86,34 +86,6 @@ if instance_exists(myFloorPlat) && myFloorPlat.xspd !=0 && !place_meeting(x,y + 
 }
 #endregion
 
-#region//agaixar
-	//transição para agaixar-se
-		//manual = downKey || automatica = colisao com parede
-		if onGround && (downKey || place_meeting(x, y, obj_wall)){
-			crouching = true;
-		}
-		//forçada / automatica
-		if onGround && place_meeting(x,y,obj_wall){
-			crouching = true;
-		}
-		//mudar a colisao
-		if crouching {mask_index = crouchSpr};
-	//transição para levantar-se
-		//manual = !downKey || automatica = !onGround
-		if crouching && (!downKey || !onGround){
-			//checar se posso me levantar
-			mask_index = idleSpr;
-			//levantar-se se não há uma parede no caminho
-			if !place_meeting(x,y,obj_wall){
-				crouching = false;
-				
-			}//se não, voltar para a colisão agaixado
-			else{
-				mask_index = crouchSpr;
-			}	
-		}
-#endregion
-
 #region//movimento horizontal
 
 	if damage_timer <= 0{
@@ -122,12 +94,8 @@ if instance_exists(myFloorPlat) && myFloorPlat.xspd !=0 && !place_meeting(x,y + 
 
 	//velocidade horizontal
 	runType = runKey;
-	if pushTimer <= 0 && state != "attack"{
+	if pushTimer <= 0 && state != "attack" && state != "crouching"{
 		xspd = moveDir * moveSpd[runType];
-	}
-	//não se mexer se agachado
-	if crouching {
-		xspd = 0;
 	}
 
 	//colisao horizontal
@@ -332,29 +300,6 @@ if instance_exists(myFloorPlat) && myFloorPlat.xspd !=0 && !place_meeting(x,y + 
 			setOnGround(true);
 		}
 		
-		//descer de uma plataforma semisolida manualmente
-		if downKey && jumpKeyPressed {
-			//ter certeza de que estamos numa plataforma semisolida
-			if instance_exists(myFloorPlat) &&
-			(myFloorPlat.object_index == obj_semiSolidWall || object_is_ancestor(myFloorPlat.object_index, obj_semiSolidWall)){
-				//checar se podemos ir pra baixo da plataforma
-				var _yCheck = max(1, myFloorPlat.yspd+1);
-				if !place_meeting(x, y + _yCheck, obj_wall){
-					//descer da plataforma
-					y += 1;
-					
-					//herdar qualquer velocidade para baixo da plataforma para ela não nos pegar novamente
-					yspd = _yCheck - 1;
-					
-					//esquecer essa plataforma para não ser pego por ela novamente
-					forgetSemiSolid = myFloorPlat;
-					
-					//sem mais plataformas
-					setOnGround(false);
-				}
-			}
-		}
-		
 		//mover-se
 		if !place_meeting(x, y + yspd, obj_wall){	
 			y += yspd;
@@ -471,17 +416,8 @@ if place_meeting(x, y, obj_wall){
 	crushTimer = 0;
 }*/
 	
-#region//controle de sprites
-	//agaixando
-	if crouching {
-		sprite_index = crouchSpr;
-	}
-		//definir colisao unica
-		mask_index = maskSpr;
-		if crouching {
-			mask_index = crouchSpr;
-		}
-#endregion
+//definir colisao unica
+mask_index = maskSpr;
 
 #region//levando dano
 
@@ -528,10 +464,13 @@ switch(state){
 			setOnGround(false);
 		}else if attackKey {
 			state = "attack";
+		}else if downKey && onGround{
+			state = "crouching";
 		}
 	break;
 	#endregion
 	
+	#region ataque
 	case "attack": //ataque
 		if onGround{
 			xspd = 0;
@@ -555,6 +494,7 @@ switch(state){
 			state = "idle"
 		}
 	break;
+	#endregion
 	
 	#region air attack
 	case "air attack":
@@ -595,7 +535,7 @@ switch(state){
 			face = moveDir;
 		}
 		
-		if abs(xspd) < .1{
+		if abs(xspd) < .1 && !downKey{
 			state = "idle";
 			xspd = 0;
 		}else if jumpKeyBuffered && jumpCount < jumpMax && (!downKey || _floorIsSolid){
@@ -616,10 +556,14 @@ switch(state){
 			state = "jumping";
 		}else if attackKey{
 			state = "attack";
+		}else if downKey{
+			xspd = 0;
+			state = "crouching";
 		}
 	break;
 	#endregion
 	
+	#region pulando
 	case "jumping": //pulando
 		sprite_index = jumpSpr;
 		
@@ -630,7 +574,71 @@ switch(state){
 		if onGround{
 			state = "idle";
 		}else if attackKey{
-			state = "air attack"
+			state = "air attack";
 		}
 	break;
+	#endregion
+	
+	#region agaixando
+	case "crouching":
+		sprite_index = crouchSpr;
+		//manual = downKey || automatica = colisao com parede
+		if onGround{
+			crouching = true;
+		}
+		//forçada / automatica
+		if onGround && place_meeting(x,y,obj_wall){
+			crouching = true;
+		}
+		//mudar a colisao
+		if crouching {mask_index = crouchSpr};
+		//transição para levantar-se
+			//manual = !downKey || automatica = !onGround
+			if crouching && (!downKey || !onGround){
+				//checar se posso me levantar
+				mask_index = idleSpr;
+				//levantar-se se não há uma parede no caminho
+				if !place_meeting(x,y,obj_wall){
+					crouching = false;
+					state = "idle";
+				}//se não, voltar para a colisão agaixado
+				else{
+					mask_index = crouchSpr;
+				}	
+			}
+			
+		//descer de uma plataforma semisolida manualmente
+		if downKey && jumpKeyPressed {
+			//ter certeza de que estamos numa plataforma semisolida
+			if instance_exists(myFloorPlat) &&
+			(myFloorPlat.object_index == obj_semiSolidWall || object_is_ancestor(myFloorPlat.object_index, obj_semiSolidWall)){
+				//checar se podemos ir pra baixo da plataforma
+				var _yCheck = max(1, myFloorPlat.yspd+1);
+				if !place_meeting(x, y + _yCheck, obj_wall){
+					//descer da plataforma
+					y += 1;
+					
+					//herdar qualquer velocidade para baixo da plataforma para ela não nos pegar novamente
+					yspd = _yCheck - 1;
+					
+					//esquecer essa plataforma para não ser pego por ela novamente
+					forgetSemiSolid = myFloorPlat;
+					
+					//sem mais plataformas
+					setOnGround(false);
+				}
+			}else{
+				state = "jumping";
+			}
+		}
+		
+		if !downKey{
+			state = "idle";
+		}else if yspd != 0{
+			state = "jumping";
+		}else if attackKey{
+			state = "attack";
+		}
+	break;
+	#endregion
 }

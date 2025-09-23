@@ -1,6 +1,7 @@
 //desenhar o fundo do menu
-
 draw_sprite_ext(sprite_index,image_index, x, y, width/sprite_width,height/sprite_height,0,c_white,1);
+//escrever o titulo
+draw_text(room_width/3, y-30,"angels cry");
 
 //desenhar as opções
 draw_set_font(global.font_main);
