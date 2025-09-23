@@ -52,7 +52,7 @@ idleSpr		= spr_gabriel_idle;
 walkSpr		= spr_gabriel_walk;
 runSpr		= spr_gabriel_walk;
 jumpSpr		= spr_gabriel_jump;
-crouchSpr	= spr_maria_crouch;
+crouchSpr	= spr_gabriel_crouch;
 depth		= -30;
 
 
@@ -75,12 +75,7 @@ attack = 1;
 damage = noone;
 
 //scripts de estado
-enum PLAYERSTATE{
-	FREE,
-	ATTACK_SLASH,
-	ATTACK_COMBO
-}
-state = PLAYERSTATE.FREE;
+state = "idle";
 
 //dano
 damage_timer = 0;

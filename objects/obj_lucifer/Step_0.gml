@@ -4,7 +4,7 @@ if !instance_exists(obj_transition){
 		var _tran = instance_create_layer(0,0,"Instances",obj_transition);
 		_tran.destination = rmLvl1;
 		_tran.destinationX = 30;
-		_tran.destinationY = 0;
+		_tran.destinationY = 288;
 	}else{
 		//movimento horizontal
 		x+= xspd;

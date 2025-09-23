@@ -14,7 +14,6 @@ life = 8;
 idleTimer = 0;
 idleTime = 60;
 
-attack = 3;
 side = "right";
 firstAtk = true;
 strength = 2;
