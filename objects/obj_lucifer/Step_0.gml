@@ -1,10 +1,10 @@
 if !instance_exists(obj_transition){
 	if life <= 0{
 		instance_destroy(self);
-		var _tran = instance_create_layer(0,0,"Instances",obj_transition);
-		_tran.destination = rmLvl1;
-		_tran.destinationX = 30;
-		_tran.destinationY = 288;
+		var _sensor = instance_create_layer(483,224,"Sensors", obj_sensor);
+		_sensor.destination = rmLvl1;
+		_sensor.destinationX = obj_player.iniX;
+		_sensor.destinationY = obj_player.iniY;
 	}else{
 		//movimento horizontal
 		x+= xspd;
