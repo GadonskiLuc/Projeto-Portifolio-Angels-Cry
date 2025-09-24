@@ -17,5 +17,6 @@ idleTime = 60;
 side = "right";
 firstAtk = true;
 strength = 2;
+attackType = 0;
 
 state = "idle";

@@ -68,6 +68,8 @@ moveSpd[0] = 2;
 moveSpd[1] = 3.5;
 xspd	= 0;
 yspd	= 0;
+iniX = x;
+iniY = y;
 
 //variaveis de estado
 crouching = false;

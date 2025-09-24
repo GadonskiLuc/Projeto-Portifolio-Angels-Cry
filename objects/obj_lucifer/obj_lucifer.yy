@@ -11,8 +11,8 @@
   "name":"obj_lucifer",
   "overriddenProperties":[],
   "parent":{
-    "name":"inimigos",
-    "path":"folders/Objects/inimigos.yy",
+    "name":"lucifer",
+    "path":"folders/Objects/inimigos/lucifer.yy",
   },
   "parentObjectId":{
     "name":"obj_enemy_father",

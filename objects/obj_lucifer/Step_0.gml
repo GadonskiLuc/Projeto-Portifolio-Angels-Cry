@@ -93,9 +93,10 @@ if !instance_exists(obj_transition){
 		#endregion
 	
 		if idleTimer > 0{
+			attackType = irandom(2);
 			idleTimer--;
 		}
-	
+
 		//state machine do boss
 		switch (state){
 			case "idle":
@@ -140,31 +141,37 @@ if !instance_exists(obj_transition){
 				}
 				break;
 			case "attack":
-	
-				if sprite_index != spr_attack1 {
-					sprite_index = spr_attack1;
-					image_index = 0;
-				}
-				if instance_exists(obj_player){
 				
-					xspd = 5* sign(-image_xscale);
-				
-					if !firstAtk{
-						if x <= 50 && side == "right"{
-							side = "left";
-							image_xscale *= -1;
-							state = "idle";
-							idleTimer = idleTime;
-					
-						}else if x >= 430 && side == "left"{
-							side = "right";
-							image_xscale *= -1;
-							state = "idle";
-							idleTimer = idleTime;
-					
-						}
+				if attackType >=0 && attackType < 2{
+					if sprite_index != spr_attack1 {
+						sprite_index = spr_attack1;
+						image_index = 0;
 					}
-					firstAtk = false;
+					if instance_exists(obj_player){
+				
+						xspd = 5* sign(-image_xscale);
+				
+						if !firstAtk{
+							if x <= 50 && side == "right"{
+								side = "left";
+								image_xscale *= -1;
+								state = "idle";
+								idleTimer = idleTime;
+					
+							}else if x >= 430 && side == "left"{
+								side = "right";
+								image_xscale *= -1;
+								state = "idle";
+								idleTimer = idleTime;
+					
+							}
+						}
+						firstAtk = false;
+					}
+				}else{
+					var _orb = instance_create_layer(x+(20*-image_xscale), y-sprite_height, "Instances", obj_orb);
+					state = "idle";
+					idleTimer = idleTime;
 				}
 
 		}
