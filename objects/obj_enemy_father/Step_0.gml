@@ -1,4 +1,8 @@
 if life <= 0{
+	spawnLife = irandom(4);
+	if spawnLife == 4{
+		instance_create_layer(x,y-sprite_height/2,"Instances", obj_life);
+	}
 	instance_destroy(self);
 }else{
 	//checa se está na tela

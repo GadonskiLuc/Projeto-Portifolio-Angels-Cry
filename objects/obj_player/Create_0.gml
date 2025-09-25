@@ -9,33 +9,6 @@ function setOnGround(_val = false){
 	}
 }
 
-function checkForSemisolidePlatform(_x, _y){
-	//variavel de retorno
-	var _rtrn = noone;
-	
-	//nao estamos subindo, ai checamos uma colisao normalmente
-	if yspd >= 0 && place_meeting(_x, _y, obj_semiSolidWall){
-		//criar uma dslist para guardar todas as instancias de colisao com a obj_semiSolidWall
-		var _list = ds_list_create();
-		var _listSize = instance_place_list(_x,_y, obj_semiSolidWall, _list, false);
-		
-		//percorrer pela lista e retornar apenas a plataforma que esata abaixo do player
-		for(var i = 0; i< _listSize; i++){
-			var _listInst = _list[| i];
-			if _listInst != forgetSemiSolid && floor(bbox_bottom) <= ceil(_listInst.bbox_top - _listInst.yspd){
-				//retornar o id da plataforma
-				_rtrn = _listInst;
-				//sair do loop mais cedo
-				i = _listSize;
-			}
-		}
-		//destruir a lista para economizar memoria
-		ds_list_destroy(_list);
-	}
-	//retornar a variavel
-	return _rtrn;
-}
-
 function setPlaning(_val = false){
 	if _val == true{
 		planing = true;
@@ -77,6 +50,7 @@ getting_damage = false;
 hitByAttack = ds_list_create();
 attack = 1;
 damage = noone;
+maxLife = 10;
 
 //scripts de estado
 state = "idle";

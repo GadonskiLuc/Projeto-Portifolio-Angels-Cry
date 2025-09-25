@@ -6,7 +6,7 @@ op_space = 32;
 
 pos = 0;
 
-option[0] = "start game";
-option[1] = "quit game";
+option[0] = "Start Game";
+option[1] = "Quit Game";
 
 op_length = array_length(option);

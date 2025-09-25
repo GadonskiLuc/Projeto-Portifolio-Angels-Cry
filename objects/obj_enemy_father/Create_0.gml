@@ -49,6 +49,7 @@ damageTime	= 30;
 attacked = false;
 strength = 0;
 damage = noone;
+spawnLife = 0;
 
 face = 1;
 depth = 1;

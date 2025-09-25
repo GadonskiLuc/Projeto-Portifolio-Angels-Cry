@@ -445,9 +445,8 @@ switch(state){
 	#region //parado
 	case "idle": 
 		sprite_index = idleSpr;
-		
-		if rightKey || leftKey{
-			state = "moving";
+		if attackKey {
+			state = "attack";		
 		}else if jumpKeyBuffered && jumpCount < jumpMax && (!downKey || _floorIsSolid){
 			state = "jumping"
 			//resetar o buffer
@@ -462,8 +461,8 @@ switch(state){
 		
 			//nao estamos mais no chao
 			setOnGround(false);
-		}else if attackKey {
-			state = "attack";
+		}else if rightKey || leftKey{
+			state = "moving";
 		}else if downKey && onGround{
 			state = "crouching";
 		}
@@ -534,10 +533,8 @@ switch(state){
 		if moveDir != 0{
 			face = moveDir;
 		}
-		
-		if abs(xspd) < .1 && !downKey{
-			state = "idle";
-			xspd = 0;
+		if attackKey{
+			state = "attack";
 		}else if jumpKeyBuffered && jumpCount < jumpMax && (!downKey || _floorIsSolid){
 			state = "jumping"
 			//resetar o buffer
@@ -554,8 +551,9 @@ switch(state){
 			setOnGround(false);
 		}else if !onGround || yspd != 0{
 			state = "jumping";
-		}else if attackKey{
-			state = "attack";
+		}else if abs(xspd) < .1 && !downKey{
+			state = "idle";
+			xspd = 0;
 		}else if downKey{
 			xspd = 0;
 			state = "crouching";
