@@ -11,6 +11,8 @@ if _hits>0{
 			with(_hitId){
 				_hitId.life -= 2;
 				_hitId.damageTimer = _hitId.damageTime;
+				_hitId.state = "attacked";
+				
 			}
 		}
 	}

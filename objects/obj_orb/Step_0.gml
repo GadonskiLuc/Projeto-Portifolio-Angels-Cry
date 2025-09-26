@@ -7,4 +7,6 @@ if instance_exists(obj_player) && instance_exists(father){
 	}
 	speed = 6;
 	direction = _dir;
+}else{
+	instance_destroy(self);
 }

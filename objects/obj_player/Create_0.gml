@@ -88,7 +88,6 @@ inv_time = 90;
 		coyoteJumpFrames	=	5;
 		
 //plataformas moveis
-inFloorPlat			= 0;
 myFloorPlat			= noone;
 earlyMoveplatXspd	= false;
 downSlopeSemiSolid	= noone;

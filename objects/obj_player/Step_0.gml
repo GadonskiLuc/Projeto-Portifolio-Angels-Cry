@@ -309,14 +309,6 @@ if instance_exists(myFloorPlat) && myFloorPlat.xspd !=0 && !place_meeting(x,y + 
 		if instance_exists(forgetSemiSolid) && !place_meeting(x, y, forgetSemiSolid){
 			forgetSemiSolid = noone;
 		}
-		
-		//checar se esta numa plataforma no ar
-		if instance_exists(myFloorPlat) && 
-		(myFloorPlat == obj_movePlat || myFloorPlat == obj_semiSolidWall){
-			inFloorPlat = true;
-		}else{
-			inFloorPlat = false;
-		}
 #endregion
 	
 #region//ultimos movimentos e colisoes com plataformas movimentadas

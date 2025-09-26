@@ -50,6 +50,7 @@ attacked = false;
 strength = 0;
 damage = noone;
 spawnLife = 0;
+state = "idle";
 
 face = 1;
 depth = 1;

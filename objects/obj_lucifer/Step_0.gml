@@ -173,6 +173,16 @@ if !instance_exists(obj_transition){
 					state = "idle";
 					idleTimer = idleTime;
 				}
+			break;
+			
+			case "attacked":
+				sprite_index = spr_damage;
+		
+				if animation_end(){
+					state = "idle";
+				}
+				
+			break;
 
 		}
 	}

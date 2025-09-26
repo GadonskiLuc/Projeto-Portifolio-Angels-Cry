@@ -1,8 +1,17 @@
 yspd += grav;
-if place_meeting(x,y+1,obj_wall)
-|| place_meeting(x,y+1,obj_semiSolidWall){
-	yspd = 0;
+var _floor = instance_nearest(x,y+1,obj_wall);
+var _semiFloor = instance_nearest(x,y,obj_semiSolidWall);
+
+if instance_exists(_floor) && place_meeting(x,y+1,_floor){
+	yspd = _floor.yspd;
+	xspd = _floor.xspd;
 }
+if place_meeting(x, y+1, obj_semiSolidWall){
+	yspd = _semiFloor.yspd;
+	xspd = _semiFloor.xspd;
+	//y = _semiFloor.y;
+}
+x += xspd; 
 y += yspd;
 
 if collectTimer > 0{
