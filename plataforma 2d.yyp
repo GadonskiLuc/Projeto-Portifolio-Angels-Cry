@@ -73,6 +73,7 @@
     {"id":{"name":"rmBoss1","path":"rooms/rmBoss1/rmBoss1.yy",},},
     {"id":{"name":"rminit","path":"rooms/rminit/rminit.yy",},},
     {"id":{"name":"rmLvl1","path":"rooms/rmLvl1/rmLvl1.yy",},},
+    {"id":{"name":"rmTest","path":"rooms/rmTest/rmTest.yy",},},
     {"id":{"name":"rmTitleScreen","path":"rooms/rmTitleScreen/rmTitleScreen.yy",},},
     {"id":{"name":"animation_end","path":"scripts/animation_end/animation_end.yy",},},
     {"id":{"name":"enemy_attack","path":"scripts/enemy_attack/enemy_attack.yy",},},
@@ -84,6 +85,7 @@
     {"id":{"name":"spr_gabriel_attack_slash_HB","path":"sprites/spr_gabriel_attack_slash_HB/spr_gabriel_attack_slash_HB.yy",},},
     {"id":{"name":"spr_gabriel_attack_slash","path":"sprites/spr_gabriel_attack_slash/spr_gabriel_attack_slash.yy",},},
     {"id":{"name":"spr_gabriel_crouch","path":"sprites/spr_gabriel_crouch/spr_gabriel_crouch.yy",},},
+    {"id":{"name":"spr_gabriel_dash","path":"sprites/spr_gabriel_dash/spr_gabriel_dash.yy",},},
     {"id":{"name":"spr_gabriel_idle","path":"sprites/spr_gabriel_idle/spr_gabriel_idle.yy",},},
     {"id":{"name":"spr_gabriel_jump","path":"sprites/spr_gabriel_jump/spr_gabriel_jump.yy",},},
     {"id":{"name":"spr_gabriel_walk","path":"sprites/spr_gabriel_walk/spr_gabriel_walk.yy",},},
@@ -120,6 +122,7 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rminit","path":"rooms/rminit/rminit.yy",},},
     {"roomId":{"name":"rmTitleScreen","path":"rooms/rmTitleScreen/rmTitleScreen.yy",},},
+    {"roomId":{"name":"rmTest","path":"rooms/rmTest/rmTest.yy",},},
     {"roomId":{"name":"rmLvl1","path":"rooms/rmLvl1/rmLvl1.yy",},},
     {"roomId":{"name":"rmBoss1","path":"rooms/rmBoss1/rmBoss1.yy",},},
   ],

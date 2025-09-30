@@ -94,7 +94,7 @@ if instance_exists(myFloorPlat) && myFloorPlat.xspd !=0 && !place_meeting(x,y + 
 
 	//velocidade horizontal
 	runType = runKey;
-	if pushTimer <= 0 && state != "attack" && state != "crouching"{
+	if pushTimer <= 0 && state != "attack" && state != "crouching" && state != "dash"{
 		xspd = moveDir * moveSpd[runType];
 	}
 
@@ -438,8 +438,10 @@ switch(state){
 	case "idle": 
 		sprite_index = idleSpr;
 		if attackKey {
+			image_index = 0;
 			state = "attack";		
 		}else if jumpKeyBuffered && jumpCount < jumpMax && (!downKey || _floorIsSolid){
+			image_index = 0;
 			state = "jumping"
 			//resetar o buffer
 			jumpKeyBuffered		= false;
@@ -453,10 +455,13 @@ switch(state){
 		
 			//nao estamos mais no chao
 			setOnGround(false);
-		}else if rightKey || leftKey{
+		}else if (rightKey || leftKey){
 			state = "moving";
 		}else if downKey && onGround{
 			state = "crouching";
+		}else if dashKey{
+			image_index = 0;
+			state = "dash";
 		}
 	break;
 	#endregion
@@ -478,6 +483,14 @@ switch(state){
 			damage = instance_create_layer(x, y, "Instances", obj_damage);
 			damage.image_xscale = face;
 			damage.father = id;
+		}
+		if dashKey{
+			image_index = 0;
+			state = "dash";
+			if damage{
+				instance_destroy(damage,false);
+				damage = noone;
+			}
 		}
 
 		if animation_end(){
@@ -549,6 +562,9 @@ switch(state){
 		}else if downKey{
 			xspd = 0;
 			state = "crouching";
+		}else if dashKey{
+			image_index = 0;
+			state = "dash";
 		}
 	break;
 	#endregion
@@ -628,6 +644,20 @@ switch(state){
 			state = "jumping";
 		}else if attackKey{
 			state = "attack";
+		}
+	break;
+	#endregion
+	
+	#region dash
+	case "dash":
+		sprite_index = dashSpr;
+		image_alpha = 0.5;
+		//se mover
+		xspd = dashSpd*face;
+		
+		//sair do estado
+		if image_index >= image_number-1{
+			state = "idle";
 		}
 	break;
 	#endregion

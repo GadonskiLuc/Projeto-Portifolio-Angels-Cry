@@ -28,6 +28,7 @@ jumpSpr		= spr_gabriel_jump;
 crouchSpr	= spr_gabriel_crouch;
 attackSpr	= spr_gabriel_attack_slash;
 airAtkSpr	= spr_gabriel_attack_air;
+dashSpr		= spr_gabriel_dash;
 depth		= -30;
 
 
@@ -41,6 +42,7 @@ moveSpd[0] = 2;
 moveSpd[1] = 3.5;
 xspd	= 0;
 yspd	= 0;
+dashSpd = 10;
 iniX = x;
 iniY = y;
 
