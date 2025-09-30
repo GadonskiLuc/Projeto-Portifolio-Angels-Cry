@@ -88,6 +88,12 @@ if instance_exists(myFloorPlat) && myFloorPlat.xspd !=0 && !place_meeting(x,y + 
 
 #region//movimento horizontal
 
+	//delay do dash
+	if dashTimer > 0 {
+		dashTimer--;
+	}
+
+	//se mover se nao estiver tomando dano
 	if damage_timer <= 0{
 		moveDir = rightKey - leftKey;
 	}
@@ -434,6 +440,7 @@ if(inv_timer > 0){
 
 	
 switch(state){
+	
 	#region //parado
 	case "idle": 
 		sprite_index = idleSpr;
@@ -455,11 +462,13 @@ switch(state){
 		
 			//nao estamos mais no chao
 			setOnGround(false);
+		}else if !onGround || yspd != 0{
+			state = "jumping"
 		}else if (rightKey || leftKey){
 			state = "moving";
 		}else if downKey && onGround{
 			state = "crouching";
-		}else if dashKey{
+		}else if dashKey && global.powerUp[0] && dashTimer <= 0{
 			image_index = 0;
 			state = "dash";
 		}
@@ -484,7 +493,7 @@ switch(state){
 			damage.image_xscale = face;
 			damage.father = id;
 		}
-		if dashKey{
+		if dashKey && global.powerUp[0] && dashTimer <= 0{
 			image_index = 0;
 			state = "dash";
 			if damage{
@@ -562,7 +571,7 @@ switch(state){
 		}else if downKey{
 			xspd = 0;
 			state = "crouching";
-		}else if dashKey{
+		}else if dashKey && global.powerUp[0] && dashTimer <= 0{
 			image_index = 0;
 			state = "dash";
 		}
@@ -658,6 +667,7 @@ switch(state){
 		//sair do estado
 		if image_index >= image_number-1{
 			state = "idle";
+			dashTimer = dashTime;
 		}
 	break;
 	#endregion

@@ -9,10 +9,12 @@ if _hits>0{
 		if ds_list_find_index(father.hitByAttack, _hitId) == -1{
 			ds_list_add(father.hitByAttack,_hitId);
 			with(_hitId){
-				_hitId.life -= 2;
-				_hitId.damageTimer = _hitId.damageTime;
-				_hitId.state = "attacked";
-				
+				if _hitId.invTimer <=0 {
+					_hitId.life -= 2;
+					_hitId.damageTimer = _hitId.damageTime;
+					_hitId.state = "attacked";
+					_hitId.invTimer = _hitId.invTime;
+				}
 			}
 		}
 	}

@@ -2,7 +2,7 @@ yspd += grav;
 var _floor = instance_nearest(x,y+1,obj_wall);
 var _semiFloor = instance_nearest(x,y,obj_semiSolidWall);
 
-if instance_exists(_floor) && place_meeting(x,y+1,_floor){
+if place_meeting(x,y+1,obj_wall){
 	yspd = _floor.yspd;
 	xspd = _floor.xspd;
 }

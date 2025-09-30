@@ -1,4 +1,4 @@
-if inv_timer <= 0{
+if inv_timer <= 0 && state != "dash"{
 	//dar dano
 	global.life -= 3;
 	

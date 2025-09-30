@@ -18,9 +18,10 @@ function enemy_attack(_sprite, _index_min, _index_max, _distX, _distY, _xscaleDm
 	if image_index > _index_min
 	&& damage == noone
 	&& image_index < _index_max{
-		damage  = instance_create_layer(x + _distX, y + _distY,layer,obj_enemy_damage);
-		damage.image_xscale = _xscaleDmg;
+		damage  = instance_create_layer(x + _distX*face, y + _distY,"Colisions",obj_enemy_damage);
+		damage.image_xscale = _xscaleDmg*-face;
 		damage.image_yscale = _yscaleDmg;
+		damage.strength = strength;
 	}
 	
 	//destruindo o dano

@@ -53,6 +53,12 @@ hitByAttack = ds_list_create();
 attack = 1;
 damage = noone;
 maxLife = 10;
+//power ups [dash, defender]
+global.powerUp = [true, false]
+
+//dash
+dashTime = 30;
+dashTimer = 0;
 
 //scripts de estado
 state = "idle";

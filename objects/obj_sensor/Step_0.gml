@@ -4,7 +4,9 @@ var _player = place_meeting(x, y, obj_player);
 
 if (_player && !colided){
 	colided = true;
+	obj_player.state = "idle";
 	obj_player.sprite_index = spr_gabriel_idle;
+	obj_player.xspd = 0;
 	//transicionando
 	var _tran = instance_create_layer(0,0,layer,obj_transition);
 	

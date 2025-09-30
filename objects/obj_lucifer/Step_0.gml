@@ -1,6 +1,8 @@
 if !instance_exists(obj_transition){
 	if life <= 0{
 		instance_destroy(self);
+		var _dash = instance_create_layer(x,y,"Instances",obj_upgrade);
+		_dash.type = 0;
 		var _sensor = instance_create_layer(483,224,"Sensors", obj_sensor);
 		_sensor.destination = rmLvl1;
 		_sensor.destinationX = obj_player.iniX;
@@ -95,6 +97,9 @@ if !instance_exists(obj_transition){
 		if idleTimer > 0{
 			attackType = irandom(2);
 			idleTimer--;
+		}
+		if invTimer > 0{
+			invTimer--;
 		}
 
 		//state machine do boss

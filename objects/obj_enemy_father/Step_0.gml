@@ -1,5 +1,5 @@
 if life <= 0{
-	spawnLife = 4;
+	spawnLife = irandom(4);
 	if spawnLife == 4{
 		instance_create_layer(x,y-sprite_height/2,"Instances", obj_life);
 	}

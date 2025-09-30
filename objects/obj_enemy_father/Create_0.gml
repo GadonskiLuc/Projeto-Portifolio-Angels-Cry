@@ -51,6 +51,8 @@ strength = 0;
 damage = noone;
 spawnLife = 0;
 state = "idle";
+invTimer = 0;
+invTime = 0;
 
 face = 1;
 depth = 1;

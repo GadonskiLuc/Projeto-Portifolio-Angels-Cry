@@ -13,6 +13,8 @@ life = 8;
 
 idleTimer = 0;
 idleTime = 60;
+invTimer = 0;
+invTime = 60;
 
 side = "right";
 firstAtk = true;
