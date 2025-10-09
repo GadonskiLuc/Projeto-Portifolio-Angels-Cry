@@ -1,2 +1,2 @@
-global.life   = 10;
+global.life   = 100;
 global.points = 0;

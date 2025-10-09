@@ -32,7 +32,7 @@ function getControls(){
 	attackKey		= mouse_check_button_pressed(1) + gamepad_button_check_pressed(0, gp_face2);
 	attackKey		= clamp(attackKey, 0, 1);
 	
-	dashKey			= mouse_check_button_pressed(mb_right);
+	dashKey			= mouse_check_button_pressed(mb_right) + gamepad_button_check_pressed(0, gp_shoulderl);
 	dashKey			= clamp(dashKey, 0, 1);
 	
 	//jumpkey buffering
