@@ -23,24 +23,11 @@ if life <= 0{
 		}
 	
 		var _subPixel = .5;
-	
-		if place_meeting(x + xspd, y, obj_wall) {
-			//ver se há um degrau na frente
-			if !place_meeting(x+xspd, y - abs(xspd) - 1, obj_wall){
-				while place_meeting(x+xspd, y, obj_wall){	y-= _subPixel;	}
-			}else{ //checar se não há um degrau inverso a frente		
-				//degrau inverso (tem o lance de duplicar o abs(xspd*2))
-				if !place_meeting(x + xspd, y+abs(xspd)+1,obj_wall){
-					while place_meeting(x+xspd,y,obj_wall){	y+= _subPixel;	}
-				}else{
-					//aproximar da parede precisamente
-					var _pixelCheck = _subPixel * sign(xspd);
-					while !place_meeting(x + _pixelCheck, y, obj_wall){	x += _pixelCheck;	}
-					//parar
-					xspd = 0;
-					state = "idle";
-				}
-			}
+		//perto de parede
+		if place_meeting(x + 150, y, obj_wall) {
+			//parar
+			xspd = 0;
+			state = "idle";
 		}
 	
 		x+= xspd;
@@ -147,12 +134,13 @@ if life <= 0{
 				xspd = 0;
 				//ficar parado por um tempo antes de voltar a atacar
 				var _closeToHole = !place_meeting(x + 100*face, y+1, obj_wall);
+				var _closeToCarrascal = place_meeting(x + 100*face, y, obj_carrascal);
 			
 				if instance_exists(obj_player){
 					var _dist = point_distance(x, y , obj_player.x, obj_player.y);
 					var _dir = point_direction(x, y, obj_player.x, obj_player.y);
 				
-					if _dist <= 300 && idleTimer <= 0 && !_closeToHole{
+					if _dist <= 300 && idleTimer <= 0 && !_closeToHole && !_closeToCarrascal{
 						xspd = lengthdir_x(maxVel,_dir);
 						//player perto, boss vai atras dele
 						state = "walking";
@@ -174,21 +162,22 @@ if life <= 0{
 			
 					var _dist = point_distance(x, y , obj_player.x, obj_player.y);
 					var _dir = point_direction(x, y , obj_player.x, obj_player.y);
-			
-					if _dist > 75{
-						xspd = lengthdir_x(maxVel,_dir);
-					}else{
-						//chegou perto demais ele ataca
-						xspd = 0;
-						state = "attack";
-					}
-				
-					var _closeToHole = !place_meeting(x + 100*face, y+1, obj_wall)
-					if _closeToHole{ 
+					var _closeToHole = !place_meeting(x + 100*face, y+1, obj_wall);
+					var _closeToCarrascal = place_meeting(x + 100*face, y, obj_carrascal);
+					
+					if _closeToHole || _closeToCarrascal{ 
 						xspd = 0;
 						state = "idle";
+					}else{
+					
+						if _dist > 75{
+							xspd = lengthdir_x(maxVel,_dir);
+						}else{
+							//chegou perto demais ele ataca
+							xspd = 0;
+							state = "attack";
+						}
 					}
-			
 			
 				}
 				break;
