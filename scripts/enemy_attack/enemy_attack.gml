@@ -1,4 +1,4 @@
-function enemy_attack(_sprite, _index_min, _index_max, _distX, _distY, _xscaleDmg, _yscaleDmg){
+function enemy_attack(_sprite, _index_min, _index_max, _distX, _distY, _xscaleDmg, _yscaleDmg, _father = noone){
 	xspd = 0;
 	
 	if !_xscaleDmg{ _xscaleDmg = 1};
@@ -22,10 +22,11 @@ function enemy_attack(_sprite, _index_min, _index_max, _distX, _distY, _xscaleDm
 		damage.image_xscale = _xscaleDmg*-face;
 		damage.image_yscale = _yscaleDmg;
 		damage.strength = strength;
+		damage.father = _father;
 	}
 	
 	//destruindo o dano
-	if damage != noone && image_index >= _index_max{
+	if (damage != noone && image_index >= _index_max){
 		instance_destroy(damage);
 		damage = noone;
 	}

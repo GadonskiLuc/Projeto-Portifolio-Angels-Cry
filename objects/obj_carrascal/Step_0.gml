@@ -183,7 +183,7 @@ if life <= 0{
 				break;
 			case "attack":
 		
-				enemy_attack(spr_attack,2, 3,sprite_width/2, -sprite_height/3,2,2);
+				enemy_attack(spr_attack,2, 3,sprite_width/2, -sprite_height/3,2,2,self);
 				idleTimer = idleTime;
 			break;
 			

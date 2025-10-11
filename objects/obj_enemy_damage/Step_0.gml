@@ -1,0 +1,1 @@
+if !instance_exists(father) {instance_destroy(self)};
