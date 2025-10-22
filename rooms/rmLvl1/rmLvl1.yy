@@ -6,7 +6,6 @@
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_7C984D4D","path":"rooms/rmLvl1/rmLvl1.yy",},
     {"name":"inst_D2298B1","path":"rooms/rmLvl1/rmLvl1.yy",},
     {"name":"inst_35F6A7F6","path":"rooms/rmLvl1/rmLvl1.yy",},
     {"name":"inst_3FCC214D","path":"rooms/rmLvl1/rmLvl1.yy",},
@@ -112,6 +111,7 @@
     {"name":"inst_15F130D","path":"rooms/rmLvl1/rmLvl1.yy",},
     {"name":"inst_649D5333","path":"rooms/rmLvl1/rmLvl1.yy",},
     {"name":"inst_443B8A1","path":"rooms/rmLvl1/rmLvl1.yy",},
+    {"name":"inst_7C984D4D","path":"rooms/rmLvl1/rmLvl1.yy",},
   ],
   "isDnd":false,
   "layers":[

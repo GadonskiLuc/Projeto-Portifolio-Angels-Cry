@@ -4,7 +4,7 @@ if !instance_exists(obj_transition){
 		var _dash = instance_create_layer(x,y,"Instances",obj_upgrade);
 		_dash.type = 0;
 		var _sensor = instance_create_layer(483,224,"Sensors", obj_sensor);
-		_sensor.destination = rmLvl1;
+		_sensor.destination = rmLvl2;
 		_sensor.destinationX = obj_player.iniX;
 		_sensor.destinationY = obj_player.iniY;
 	}else{

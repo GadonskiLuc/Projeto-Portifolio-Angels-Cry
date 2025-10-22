@@ -29,7 +29,7 @@ crouchSpr	= spr_gabriel_crouch;
 attackSpr	= spr_gabriel_attack_slash;
 airAtkSpr	= spr_gabriel_attack_air;
 dashSpr		= spr_gabriel_dash;
-depth		= -30;
+depth		= 100;
 
 
 // movimento
