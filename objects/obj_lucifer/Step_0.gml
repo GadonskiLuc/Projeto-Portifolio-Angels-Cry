@@ -5,8 +5,8 @@ if !instance_exists(obj_transition){
 		_dash.type = 0;
 		var _sensor = instance_create_layer(483,224,"Sensors", obj_sensor);
 		_sensor.destination = rmLvl2;
-		_sensor.destinationX = obj_player.iniX;
-		_sensor.destinationY = obj_player.iniY;
+		_sensor.destinationX = 125;
+		_sensor.destinationY = 350;
 	}else{
 		//movimento horizontal
 		x+= xspd;

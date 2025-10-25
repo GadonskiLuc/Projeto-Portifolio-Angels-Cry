@@ -4,7 +4,7 @@ event_inherited();
 spr_idle = spr_nigthmare_idle;
 spr_damage = spr_nigthmare_damage;
 
-life = 4;
+life = 2;
 strength = 1;
 grav = 0;
 vel = 2;

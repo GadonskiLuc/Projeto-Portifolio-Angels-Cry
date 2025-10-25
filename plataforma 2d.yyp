@@ -73,6 +73,7 @@
     {"id":{"name":"obj_nightmare","path":"objects/obj_nightmare/obj_nightmare.yy",},},
     {"id":{"name":"obj_orb","path":"objects/obj_orb/obj_orb.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
+    {"id":{"name":"obj_playerSpawn","path":"objects/obj_playerSpawn/obj_playerSpawn.yy",},},
     {"id":{"name":"obj_semiSolidWall","path":"objects/obj_semiSolidWall/obj_semiSolidWall.yy",},},
     {"id":{"name":"obj_semiSolidWallMovePlat","path":"objects/obj_semiSolidWallMovePlat/obj_semiSolidWallMovePlat.yy",},},
     {"id":{"name":"obj_sensor","path":"objects/obj_sensor/obj_sensor.yy",},},
@@ -152,9 +153,9 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rminit","path":"rooms/rminit/rminit.yy",},},
     {"roomId":{"name":"rmTitleScreen","path":"rooms/rmTitleScreen/rmTitleScreen.yy",},},
-    {"roomId":{"name":"rmLvl2","path":"rooms/rmLvl2/rmLvl2.yy",},},
     {"roomId":{"name":"rmLvl1","path":"rooms/rmLvl1/rmLvl1.yy",},},
     {"roomId":{"name":"rmBoss1","path":"rooms/rmBoss1/rmBoss1.yy",},},
+    {"roomId":{"name":"rmLvl2","path":"rooms/rmLvl2/rmLvl2.yy",},},
     {"roomId":{"name":"rmBoss2","path":"rooms/rmBoss2/rmBoss2.yy",},},
     {"roomId":{"name":"rmTest","path":"rooms/rmTest/rmTest.yy",},},
   ],

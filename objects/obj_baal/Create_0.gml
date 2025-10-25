@@ -1,7 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
-life = 4
+life = 40
 attackType = 0;
 timesAttacked = 0
 alpha = 2
@@ -15,4 +15,4 @@ idleTimer = 60
 idleTime = 45
 invTimer = 0
 invTime = 60
-depth = 101
+depth = 102

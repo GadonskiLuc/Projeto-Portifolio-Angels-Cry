@@ -1,3 +1,3 @@
 if y >= room_height{
-	global.life -=2;
+	global.life = 0;
 }

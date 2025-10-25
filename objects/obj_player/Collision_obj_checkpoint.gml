@@ -1,3 +1,11 @@
-iniX = other.x;
-iniY = other.y;
+ini_open("checkpoint.ini");
+
+ini_write_real("player", "iniX", x);
+ini_write_real("player", "iniY", y);
+ini_write_real("player", "maxLife", maxLife);
+ini_write_real("player", "dash", global.powerUp[0]);
+ini_write_real("player", "defense", global.powerUp[1]);
+
+ini_close();
+
 instance_destroy(other);

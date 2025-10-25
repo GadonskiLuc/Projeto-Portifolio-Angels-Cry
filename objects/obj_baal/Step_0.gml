@@ -8,8 +8,8 @@ if !instance_exists(obj_transition){
 			instance_destroy(self);
 			var _sensor = instance_create_layer(483,224,"Sensors", obj_sensor);
 			_sensor.destination = rmLvl2;
-			_sensor.destinationX = obj_player.iniX;
-			_sensor.destinationY = obj_player.iniY;
+			_sensor.destinationX = global.iniX;
+			_sensor.destinationY = global.iniY;
 		}
 	}else{
 	

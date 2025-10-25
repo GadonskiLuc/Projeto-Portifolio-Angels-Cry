@@ -43,8 +43,6 @@ moveSpd[1] = 3.5;
 xspd	= 0;
 yspd	= 0;
 dashSpd = 10;
-iniX = x;
-iniY = y;
 
 //variaveis de estado
 crouching = false;
@@ -53,8 +51,6 @@ hitByAttack = ds_list_create();
 attack = 1;
 damage = noone;
 maxLife = 10;
-//power ups [dash, defender]
-global.powerUp = [true, false]
 
 //dash
 dashTime = 30;
