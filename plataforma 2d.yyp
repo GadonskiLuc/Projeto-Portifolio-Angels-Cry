@@ -97,6 +97,8 @@
     {"id":{"name":"enemy_attack","path":"scripts/enemy_attack/enemy_attack.yy",},},
     {"id":{"name":"general_functions","path":"scripts/general_functions/general_functions.yy",},},
     {"id":{"name":"spr_baal_arm","path":"sprites/spr_baal_arm/spr_baal_arm.yy",},},
+    {"id":{"name":"spr_baal_attack_arm","path":"sprites/spr_baal_attack_arm/spr_baal_attack_arm.yy",},},
+    {"id":{"name":"spr_baal_attack_fire","path":"sprites/spr_baal_attack_fire/spr_baal_attack_fire.yy",},},
     {"id":{"name":"spr_baal_damage","path":"sprites/spr_baal_damage/spr_baal_damage.yy",},},
     {"id":{"name":"spr_baal","path":"sprites/spr_baal/spr_baal.yy",},},
     {"id":{"name":"spr_carrascal_attack","path":"sprites/spr_carrascal_attack/spr_carrascal_attack.yy",},},

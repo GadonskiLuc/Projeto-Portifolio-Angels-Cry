@@ -1,19 +1,22 @@
-if instance_exists(obj_player) && instance_exists(father){
+if instance_exists(obj_player) && instance_exists(father) && father.life > 0{
 	var _dist = point_direction(x, y, obj_baal.x, obj_baal.y)
-	yspd = lengthdir_y(maxVel,_dist)
+	var _distPlayer = point_direction(x, y, obj_player.x, obj_player.y)
+	
+	yspd = lengthdir_y(maxYspd,_dist)
+	
 	
 	if followTimer > 0{
-		x = obj_player.x
+		xspd = lengthdir_x(maxXspd,_distPlayer)
+		x += xspd
 		followTimer--
 	}else{
-	
-		if !place_meeting(x,y+1,obj_wall){
+		if y <= 220{
 			y += yspd
 		}
 		//followTimer = followTime
 	}
 	
-	if place_meeting(x,y+1,obj_wall){
+	if y > 220{
 		existTimer--
 		
 		if existTimer <= 0{
@@ -22,4 +25,6 @@ if instance_exists(obj_player) && instance_exists(father){
 			instance_destroy(self)
 		}
 	}
+}else{
+	instance_destroy(self)
 }

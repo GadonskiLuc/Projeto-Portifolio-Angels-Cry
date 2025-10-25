@@ -1,15 +1,18 @@
 // Inherit the parent event
 event_inherited();
 
-life = 20
+life = 4
 attackType = 0;
 timesAttacked = 0
+alpha = 2
 
 spr_idle = spr_baal
 spr_damage = spr_baal_damage
+spr_attack1 = spr_baal_attack_arm
+spr_attack2 = spr_baal_attack_fire
 
-idleTimer = 100
+idleTimer = 60
 idleTime = 45
 invTimer = 0
-invTime = 90
+invTime = 60
 depth = 101
