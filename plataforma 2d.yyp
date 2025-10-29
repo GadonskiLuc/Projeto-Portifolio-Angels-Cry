@@ -122,6 +122,7 @@
     {"id":{"name":"spr_gabriel_dash","path":"sprites/spr_gabriel_dash/spr_gabriel_dash.yy",},},
     {"id":{"name":"spr_gabriel_idle","path":"sprites/spr_gabriel_idle/spr_gabriel_idle.yy",},},
     {"id":{"name":"spr_gabriel_jump","path":"sprites/spr_gabriel_jump/spr_gabriel_jump.yy",},},
+    {"id":{"name":"spr_gabriel_run","path":"sprites/spr_gabriel_run/spr_gabriel_run.yy",},},
     {"id":{"name":"spr_gabriel_walk","path":"sprites/spr_gabriel_walk/spr_gabriel_walk.yy",},},
     {"id":{"name":"spr_imp_damage","path":"sprites/spr_imp_damage/spr_imp_damage.yy",},},
     {"id":{"name":"spr_imp_idle","path":"sprites/spr_imp_idle/spr_imp_idle.yy",},},
