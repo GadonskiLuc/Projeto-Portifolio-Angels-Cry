@@ -6,6 +6,7 @@ spr_walking = spr_lucifer_idle; // mudar
 spr_damage = spr_lucifer_damage;
 spr_damage_on_atk = spr_lucifer_damage_on_attack;
 spr_attack1 = spr_lucifer_attack1;
+spr_attack2 = spr_lucifer_attack2;
 
 xspd = 0;
 max_xspd = 1.5;

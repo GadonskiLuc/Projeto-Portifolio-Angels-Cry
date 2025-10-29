@@ -159,9 +159,15 @@ if !instance_exists(obj_transition){
 						}
 					}
 				}else{
-					var _orb = instance_create_layer(x+(20*-image_xscale), y-sprite_height, "Instances", obj_orb);
-					state = "idle";
-					idleTimer = idleTime;
+					if sprite_index != spr_attack2{
+						sprite_index = spr_attack2;
+						image_index = 0;
+					}
+					if animation_end(){
+						var _orb = instance_create_layer(x+(20*-image_xscale), y-sprite_height+10, "Instances", obj_orb);
+						state = "idle";
+						idleTimer = idleTime;
+					}
 				}
 			break;
 			

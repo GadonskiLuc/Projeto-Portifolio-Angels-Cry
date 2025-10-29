@@ -131,6 +131,7 @@
     {"id":{"name":"spr_life_disappear","path":"sprites/spr_life_disappear/spr_life_disappear.yy",},},
     {"id":{"name":"spr_life","path":"sprites/spr_life/spr_life.yy",},},
     {"id":{"name":"spr_lucifer_attack1","path":"sprites/spr_lucifer_attack1/spr_lucifer_attack1.yy",},},
+    {"id":{"name":"spr_lucifer_attack2","path":"sprites/spr_lucifer_attack2/spr_lucifer_attack2.yy",},},
     {"id":{"name":"spr_lucifer_damage_on_attack","path":"sprites/spr_lucifer_damage_on_attack/spr_lucifer_damage_on_attack.yy",},},
     {"id":{"name":"spr_lucifer_damage","path":"sprites/spr_lucifer_damage/spr_lucifer_damage.yy",},},
     {"id":{"name":"spr_lucifer_idle","path":"sprites/spr_lucifer_idle/spr_lucifer_idle.yy",},},
