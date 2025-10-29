@@ -2,7 +2,8 @@
 event_inherited();
 spr_idle = spr_carrascal_idle;
 spr_attack = spr_carrascal_attack;
-spr_walking = spr_carrascal_walking; //mudar
+spr_walking = spr_carrascal_walking; 
+spr_damage = spr_carrascal_damage
 
 idleTimer = 0;
 idleTime = 90;

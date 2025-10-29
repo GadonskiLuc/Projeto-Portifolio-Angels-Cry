@@ -188,7 +188,7 @@ if life <= 0{
 			break;
 			
 			case "attacked":
-				//sprite_index = spr_damage;
+				sprite_index = spr_damage;
 		
 				if animation_end(){
 					state = "idle";

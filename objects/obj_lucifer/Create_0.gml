@@ -4,12 +4,13 @@ event_inherited();
 spr_idle = spr_lucifer_idle;
 spr_walking = spr_lucifer_idle; // mudar
 spr_damage = spr_lucifer_damage;
+spr_damage_on_atk = spr_lucifer_damage_on_attack;
 spr_attack1 = spr_lucifer_attack1;
 
 xspd = 0;
 max_xspd = 1.5;
 
-life = 8;
+life = 15;
 
 idleTimer = 0;
 idleTime = 60;
@@ -20,5 +21,6 @@ side = "right";
 firstAtk = true;
 strength = 2;
 attackType = 0;
+attacking = false;
 
 state = "idle";

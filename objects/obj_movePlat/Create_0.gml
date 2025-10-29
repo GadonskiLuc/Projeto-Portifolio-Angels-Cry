@@ -3,6 +3,8 @@ event_inherited();
 xstart = x;
 ystart = y;
 
+depth = 99
+
 // Tipo de movimento ("circle", "horizontal", "vertical")
 moveType = "circle";
 

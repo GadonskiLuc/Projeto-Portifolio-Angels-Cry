@@ -6,7 +6,7 @@ if !instance_exists(obj_transition){
 		var _sensor = instance_create_layer(483,224,"Sensors", obj_sensor);
 		_sensor.destination = rmLvl2;
 		_sensor.destinationX = 125;
-		_sensor.destinationY = 350;
+		_sensor.destinationY = 700;
 	}else{
 		//movimento horizontal
 		x+= xspd;
@@ -108,70 +108,55 @@ if !instance_exists(obj_transition){
 				//parado
 				if sprite_index != spr_idle{
 					sprite_index = spr_idle;
-					image_index = 0;
+					if !attacking{
+						image_index = 0;
+					}
 				}
+				
 				xspd = 0;
+				
+				attacking = false;
 				//ficar parado por um tempo antes de voltar a atacar
 				if idleTimer <= 0{
 					if instance_exists(obj_player){
-						var _dist = point_distance(x, y , obj_player.x, obj_player.y);
 						//player perto, boss vai atras dele
 						state = "attack";
 					}
 				}
-				break;
+			break;
 	
-			case "walking":
-				//andando
-				if sprite_index != spr_walking {
-					sprite_index = spr_walking;
-					image_index = 0;
-				}
-		
-				//seguir o player
-				if instance_exists(obj_player){
-			
-					var _dist = point_distance(x, y , obj_player.x, obj_player.y);
-					var _dir = point_direction(x, y , obj_player.x, obj_player.y);
-			
-					/*if _dist > 50{
-						xspd = lengthdir_x(max_xspd,_dir);
-					}else{
-						//chegou perto demais ele ataca
-						xspd = 0;
-						state = "attack";
-					}*/
-			
-			
-				}
-				break;
 			case "attack":
-				
+				if x <= 40 {xspd = 0};
+				if x >= 430 {xspd = 0};
 				if attackType >=0 && attackType < 2{
-					if sprite_index != spr_attack1 {
+					attacking = true;
+					if sprite_index != spr_attack1 && sprite_index != spr_damage_on_atk{
 						sprite_index = spr_attack1;
 						image_index = 0;
 					}
 					if instance_exists(obj_player){
+						
+						if animation_end(){
+							image_index = 6;
+							xspd = 10* sign(-image_xscale);
 				
-						xspd = 5* sign(-image_xscale);
-				
-						if !firstAtk{
-							if x <= 50 && side == "right"{
-								side = "left";
-								image_xscale *= -1;
-								state = "idle";
-								idleTimer = idleTime;
+							if !firstAtk{
+								if x <= 50 && side == "right"{
+									side = "left";
+									image_xscale *= -1;
+									state = "idle";
+									idleTimer = idleTime;
 					
-							}else if x >= 430 && side == "left"{
-								side = "right";
-								image_xscale *= -1;
-								state = "idle";
-								idleTimer = idleTime;
+								}else if x >= 400 && side == "left"{
+									side = "right";
+									image_xscale *= -1;
+									state = "idle";
+									idleTimer = idleTime;
 					
+								}
 							}
+							firstAtk = false;
 						}
-						firstAtk = false;
 					}
 				}else{
 					var _orb = instance_create_layer(x+(20*-image_xscale), y-sprite_height, "Instances", obj_orb);
@@ -181,11 +166,19 @@ if !instance_exists(obj_transition){
 			break;
 			
 			case "attacked":
-				sprite_index = spr_damage;
-		
-				if animation_end(){
+				if attacking{
+					sprite_index = spr_damage_on_atk;
+					if animation_end(){
+					state = "attack";
+				}
+									
+				}else{
+					sprite_index = spr_damage;
+					if animation_end(){
 					state = "idle";
 				}
+				}
+				
 				
 			break;
 
