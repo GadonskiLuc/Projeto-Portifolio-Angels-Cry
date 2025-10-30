@@ -442,7 +442,10 @@ if(inv_timer > 0){
 switch(state){
 	
 	#region //parado
-	case "idle": 
+	case "idle":
+		playedSound = false
+		playedSoundAtk = false
+		playedSoundDmg = false
 		sprite_index = idleSpr;
 		if attackKey {
 			image_index = 0;
@@ -487,6 +490,11 @@ switch(state){
 			image_index = 0;
 			ds_list_clear(hitByAttack);
 		}
+		//toca som de ataque
+		if !playedSound{
+			audio_play_sound(snd_gabriel_atk,8,false)
+		}
+		playedSound = true
 		//usar a hitbox e checar hits
 		if damage == noone{
 			damage = instance_create_layer(x, y, "Instances", obj_damage);
@@ -517,6 +525,11 @@ switch(state){
 			image_index = 0;
 			ds_list_clear(hitByAttack);
 		}
+		//toca som de ataque
+		if !playedSoundAtk{
+			audio_play_sound(snd_gabriel_atk,8,false)
+		}
+		playedSoundAtk = true
 		
 		if damage == noone{
 			damage = instance_create_layer(x, y+10, "Instances", obj_damage);
@@ -580,7 +593,14 @@ switch(state){
 	
 	#region pulando
 	case "jumping": //pulando
+	
+		playedSoundAtk = false
 		sprite_index = jumpSpr;
+		//tocar som de pulo
+		if !playedSound && jumpKey{
+			audio_play_sound(snd_gabriel_jump,8,false)
+		}
+		playedSound = true
 		
 		if moveDir != 0{
 			face = moveDir;
@@ -661,6 +681,11 @@ switch(state){
 	case "dash":
 		sprite_index = dashSpr;
 		image_alpha = 0.5;
+		
+		if !playedSound{
+			audio_play_sound(snd_gabriel_dash,8,false)
+		}
+		playedSound = true
 		//se mover
 		xspd = dashSpd*face;
 		

@@ -50,6 +50,9 @@ getting_damage = false;
 hitByAttack = ds_list_create();
 attack = 1;
 damage = noone;
+playedSound = false
+playedSoundAtk = false
+playedSoundDmg = false
 maxLife = 10;
 
 //dash

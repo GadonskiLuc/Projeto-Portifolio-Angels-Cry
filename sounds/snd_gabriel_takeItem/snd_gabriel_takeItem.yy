@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_gabriel_takeItem",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.60986394,
+  "name":"snd_gabriel_takeItem",
+  "parent":{
+    "name":"gabriel",
+    "path":"folders/Sounds/gabriel.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_gabriel_takeItem.wav",
+  "type":0,
+  "volume":1.0,
+}

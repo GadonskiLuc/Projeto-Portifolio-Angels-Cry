@@ -1,4 +1,9 @@
 if inv_timer <= 0 && state != "dash"{
+	//toca som de hit
+	if !playedSound{
+		audio_play_sound(snd_gabriel_hurt,8,false)
+	}
+	playedSound = true
 	//dar dano
 	global.life -= 2;
 	

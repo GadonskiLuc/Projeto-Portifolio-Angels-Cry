@@ -10,6 +10,11 @@ if _hits>0{
 			ds_list_add(father.hitByAttack,_hitId);
 			with(_hitId){
 				if _hitId.invTimer <=0 {
+					//toca som de hit
+					if !other.playedSound{
+						audio_play_sound(snd_gabriel_hit,8,false)
+					}
+					other.playedSound = true
 					_hitId.life -= 2;
 					_hitId.damageTimer = _hitId.damageTime;
 					_hitId.state = "attacked";

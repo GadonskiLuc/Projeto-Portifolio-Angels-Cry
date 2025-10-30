@@ -1,18 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_checkpoint",
+  "%Name":"obj_musicManager",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_checkpoint",
+  "name":"obj_musicManager",
   "overriddenProperties":[],
   "parent":{
-    "name":"items",
-    "path":"folders/Objects/items.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
-  "persistent":false,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -29,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_checkpoint",
-    "path":"sprites/spr_checkpoint/spr_checkpoint.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
