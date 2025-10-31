@@ -8,3 +8,18 @@ if room != rmTitleScreen{
 	draw_text_transformed(45,30, global.lives,2,2,0)
 
 }
+
+if(instance_exists(obj_baal)){
+	
+	draw_sprite(spr_hpBar_back_boss,1,65,500)
+	draw_sprite_ext(spr_hpBar_front_boss,1,65,500,
+	max(0,obj_baal.life/40),1,0,c_white,1)
+
+}
+if(instance_exists(obj_lucifer)){
+	
+	draw_sprite(spr_hpBar_back_boss,1,65,500)
+	draw_sprite_ext(spr_hpBar_front_boss,1,65,500,
+	max(0,obj_lucifer.life/15),1,0,c_white,1)
+
+}

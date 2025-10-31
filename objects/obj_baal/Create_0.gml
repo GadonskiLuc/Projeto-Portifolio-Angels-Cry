@@ -5,6 +5,7 @@ life = 40
 attackType = 0;
 timesAttacked = 0
 alpha = 2
+droppedLife = false;
 playedSound = false;
 playedSoundFire = false;
 

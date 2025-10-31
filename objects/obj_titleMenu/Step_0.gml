@@ -10,11 +10,21 @@ acceptKey		= clamp(acceptKey, 0, 1);
 //percorrer o menu
 pos += downKey - upKey;
 
+if (downKey || upKey) && !playedSound {
+	audio_play_sound(snd_menu_select,8,false);
+}
+playedSound = true;
+
+if downKey + upKey == 0{
+	playedSound = false;
+}
+
 if pos >= op_length{ pos = 0};
 if pos < 0{ pos = op_length-1};
 
 //usar as opções
 if acceptKey{
+	audio_play_sound(snd_menu_confirm,8,false);
 	switch(pos){
 		case 0://start game
 			room_goto_next();

@@ -25,6 +25,7 @@ if !instance_exists(obj_transition){
 		//state machine do boss
 		switch (state){
 			case "idle":
+				droppedLife = false;
 				playedSound = false;
 				playedSoundFire = false;
 				//parado
@@ -95,6 +96,12 @@ if !instance_exists(obj_transition){
 			
 			case "attacked":
 				sprite_index = spr_damage;
+				
+				var _dropHealth = irandom(10)
+				if _dropHealth > 8 && !droppedLife && global.life < 8{
+					instance_create_layer(obj_player.x,60, "Instances", obj_life);
+				}
+				droppedLife = true;
 		
 				if animation_end(){
 					state = "idle";

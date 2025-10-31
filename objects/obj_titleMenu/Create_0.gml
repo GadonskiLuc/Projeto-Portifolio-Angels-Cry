@@ -4,6 +4,8 @@ height = 200;
 op_border = 16;
 op_space = 32;
 
+playedSound = false;
+
 pos = 0;
 
 option[0] = "Start Game";

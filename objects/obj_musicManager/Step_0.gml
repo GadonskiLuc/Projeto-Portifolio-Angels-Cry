@@ -1,5 +1,9 @@
 var _finalVol = global.musicVolume*global.masterVolume;
 
+if !instance_exists(obj_baal){
+	audio_stop_sound(snd_stone_falling);
+}
+
 if songAsset != targetSongAsset{
 	
 	if audio_is_playing(songInstance){

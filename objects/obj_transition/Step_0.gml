@@ -9,8 +9,13 @@ if alpha >= 1 {
 	room_goto(destination);
 	
 	//posicionando o player
-	obj_player.x = destinationX;
-	obj_player.y = destinationY;
+	if room == rmLvl2{
+		obj_player.x = 100;
+		obj_player.y = 350;
+	}else{
+		obj_player.x = destinationX;
+		obj_player.y = destinationY;
+	}
 }
 
 //destruindo o objeto
