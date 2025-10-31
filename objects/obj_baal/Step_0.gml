@@ -25,6 +25,8 @@ if !instance_exists(obj_transition){
 		//state machine do boss
 		switch (state){
 			case "idle":
+				playedSound = false;
+				playedSoundFire = false;
 				//parado
 				if sprite_index != spr_idle && animation_end(){
 					sprite_index = spr_idle;
@@ -45,6 +47,12 @@ if !instance_exists(obj_transition){
 					if timesAttacked <=0{
 						sprite_index = spr_attack1
 						
+						if !playedSound{
+							audio_play_sound(snd_stone_falling,8,false)
+						}
+						playedSound = true;
+						
+						
 						var _armAtk = instance_create_layer(obj_player.x,60,"Instances",obj_baal_arm);
 						_armAtk.father = self
 						timesAttacked++
@@ -54,8 +62,13 @@ if !instance_exists(obj_transition){
 					}
 				}else{
 					sprite_index = spr_attack2
+					if !playedSoundFire{
+						audio_play_sound(snd_baal_charging_fire,8,false)
+					}
+					playedSoundFire = true;
 					
-					if animation_end(){
+					if animation_end(){	
+						
 						var _orb1 = instance_create_layer(x, y-195, "Instances", obj_flameBall);
 						var _orb2 = instance_create_layer(x, y-195, "Instances", obj_flameBall);
 						var _orb3 = instance_create_layer(x, y-195, "Instances", obj_flameBall);
@@ -67,7 +80,11 @@ if !instance_exists(obj_transition){
 						_orb3.targetX = x-150
 						_orb4.targetX = x-350
 						_orb5.targetX = x+350
-					
+						
+						if !playedSound{
+							audio_play_sound(snd_baal_fireball,8,false)
+						}
+						playedSound = true;
 					
 						state = "idle";
 						idleTimer = idleTime;

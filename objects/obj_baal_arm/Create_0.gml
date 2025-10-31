@@ -7,5 +7,5 @@ yspd = 0
 followTimer = 120
 followTime = 120
 father = noone
-
+playedSound = false;
 existTimer = 60

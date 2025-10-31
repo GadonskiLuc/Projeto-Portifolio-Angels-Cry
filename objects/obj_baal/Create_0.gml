@@ -5,6 +5,8 @@ life = 40
 attackType = 0;
 timesAttacked = 0
 alpha = 2
+playedSound = false;
+playedSoundFire = false;
 
 spr_idle = spr_baal
 spr_damage = spr_baal_damage

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_baal_charging_fire",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.5107709,
+  "exportDir":"",
+  "name":"snd_baal_charging_fire",
+  "parent":{
+    "name":"baal",
+    "path":"folders/Sounds/baal.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_baal_charging_fire.wav",
+  "volume":1.0,
+}
