@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_maria_crouch",
   "bboxMode":2,
   "bbox_bottom":19,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"c58e1e83-40e2-4ed7-b9a7-0931a319578f","name":"c58e1e83-40e2-4ed7-b9a7-0931a319578f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c58e1e83-40e2-4ed7-b9a7-0931a319578f","name":"c58e1e83-40e2-4ed7-b9a7-0931a319578f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

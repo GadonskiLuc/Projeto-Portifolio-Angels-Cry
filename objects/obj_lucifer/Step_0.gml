@@ -105,6 +105,7 @@ if !instance_exists(obj_transition){
 		//state machine do boss
 		switch (state){
 			case "idle":
+				playedSound = false;
 				//parado
 				if sprite_index != spr_idle{
 					sprite_index = spr_idle;
@@ -133,10 +134,15 @@ if !instance_exists(obj_transition){
 					if sprite_index != spr_attack1 && sprite_index != spr_damage_on_atk{
 						sprite_index = spr_attack1;
 						image_index = 0;
+						
 					}
 					if instance_exists(obj_player){
 						
 						if animation_end(){
+							if !playedSound{
+								audio_play_sound(snd_lucifer_atk1,8,false);
+							}
+							playedSound = true;
 							image_index = 6;
 							xspd = 10* sign(-image_xscale);
 				
@@ -162,6 +168,10 @@ if !instance_exists(obj_transition){
 					if sprite_index != spr_attack2{
 						sprite_index = spr_attack2;
 						image_index = 0;
+						if !playedSound{
+							audio_play_sound(snd_lucifer_atk2,8,false);
+						}
+						playedSound = true;
 					}
 					if animation_end(){
 						var _orb = instance_create_layer(x+(20*-image_xscale), y-sprite_height+10, "Instances", obj_orb);

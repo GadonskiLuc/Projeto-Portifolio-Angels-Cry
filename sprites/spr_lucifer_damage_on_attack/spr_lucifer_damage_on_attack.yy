@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_lucifer_damage_on_attack",
   "bboxMode":2,
   "bbox_bottom":59,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"95746979-6701-4d38-b58c-6d8fdd092c08","name":"95746979-6701-4d38-b58c-6d8fdd092c08","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"d6687359-cac2-4b6c-b8fe-5244270fabcb","name":"d6687359-cac2-4b6c-b8fe-5244270fabcb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"95746979-6701-4d38-b58c-6d8fdd092c08","name":"95746979-6701-4d38-b58c-6d8fdd092c08","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d6687359-cac2-4b6c-b8fe-5244270fabcb","name":"d6687359-cac2-4b6c-b8fe-5244270fabcb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

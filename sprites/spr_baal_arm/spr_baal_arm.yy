@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_baal_arm",
   "bboxMode":2,
   "bbox_bottom":238,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"967fe998-4483-4a7f-9735-cd6c0ca44dbb","name":"967fe998-4483-4a7f-9735-cd6c0ca44dbb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"967fe998-4483-4a7f-9735-cd6c0ca44dbb","name":"967fe998-4483-4a7f-9735-cd6c0ca44dbb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
