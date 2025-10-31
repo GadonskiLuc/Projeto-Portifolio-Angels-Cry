@@ -53,7 +53,7 @@ damage = noone;
 playedSound = false
 playedSoundAtk = false
 playedSoundDmg = false
-maxLife = 10;
+global.maxLife = 10;
 
 //dash
 dashTime = 30;
