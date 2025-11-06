@@ -9,13 +9,11 @@ if alpha >= 1 {
 	room_goto(destination);
 	
 	//posicionando o player
-	if room == rmLvl2{
-		obj_player.x = 100;
-		obj_player.y = 350;
-	}else{
+	if instance_exists(obj_player){
 		obj_player.x = destinationX;
 		obj_player.y = destinationY;
 	}
+	
 }
 
 //destruindo o objeto

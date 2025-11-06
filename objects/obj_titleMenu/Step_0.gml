@@ -38,7 +38,10 @@ if acceptKey{
 		case 0:
 			switch(pos){
 				case 0://start game
-					room_goto_next();
+					var _transition = instance_create_layer(0, 0, layer, obj_transition);
+					_transition.destination  = rmLvl1;
+					_transition.destinationX = global.iniX;
+					_transition.destinationY = global.iniY;
 					break;
 				case 1://options
 					menu_level = 1;
