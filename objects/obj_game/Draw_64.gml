@@ -1,4 +1,5 @@
 if room != rmTitleScreen{
+	draw_set_alpha(1)
 	draw_sprite(spr_hpBar_back,1,35,20)
 	draw_sprite_ext(spr_hpBar_front,1,35,20,
 	max(0,global.life/global.Maxlife),1,0,c_white,1)
