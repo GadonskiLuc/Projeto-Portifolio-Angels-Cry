@@ -1,18 +1,22 @@
 if global.life <= 0 {
 	obj_player.xspd = 0;
 	obj_player.yspd = 0;
-	obj_player.state = "idle";
+	obj_player.state = "death";
 	
 	global.lives--
 	
 	
-	if room == rmLvl2 || room == rmLvl1{
+	/*if room == rmLvl2 || room == rmLvl1{
 		room_restart();
 	}else{
 		room_goto_previous()
-	}
+	}*/
 }
 
 if global.lives < 0{
 	game_restart();
+}
+
+if gameOver{
+	audio_stop_all();
 }

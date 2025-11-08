@@ -29,6 +29,7 @@ crouchSpr	= spr_gabriel_crouch;
 attackSpr	= spr_gabriel_attack_slash;
 airAtkSpr	= spr_gabriel_attack_air;
 dashSpr		= spr_gabriel_dash;
+deathSpr	= spr_gabriel_death;
 depth		= 100;
 
 
@@ -53,7 +54,6 @@ damage = noone;
 playedSound = false
 playedSoundAtk = false
 playedSoundDmg = false
-global.maxLife = 10;
 
 //dash
 dashTime = 30;

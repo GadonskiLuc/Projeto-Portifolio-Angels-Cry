@@ -39,7 +39,7 @@ if acceptKey{
 			switch(pos){
 				case 0://start game
 					var _transition = instance_create_layer(0, 0, layer, obj_transition);
-					_transition.destination  = rmBoss1;
+					_transition.destination  = rmLvl1;
 					_transition.destinationX = global.iniX;
 					_transition.destinationY = global.iniY;
 					break;

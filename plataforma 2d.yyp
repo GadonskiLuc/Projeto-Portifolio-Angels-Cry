@@ -147,6 +147,7 @@
     {"id":{"name":"spr_gabriel_attack_slash","path":"sprites/spr_gabriel_attack_slash/spr_gabriel_attack_slash.yy",},},
     {"id":{"name":"spr_gabriel_crouch","path":"sprites/spr_gabriel_crouch/spr_gabriel_crouch.yy",},},
     {"id":{"name":"spr_gabriel_dash","path":"sprites/spr_gabriel_dash/spr_gabriel_dash.yy",},},
+    {"id":{"name":"spr_gabriel_death","path":"sprites/spr_gabriel_death/spr_gabriel_death.yy",},},
     {"id":{"name":"spr_gabriel_icon","path":"sprites/spr_gabriel_icon/spr_gabriel_icon.yy",},},
     {"id":{"name":"spr_gabriel_idle","path":"sprites/spr_gabriel_idle/spr_gabriel_idle.yy",},},
     {"id":{"name":"spr_gabriel_jump","path":"sprites/spr_gabriel_jump/spr_gabriel_jump.yy",},},

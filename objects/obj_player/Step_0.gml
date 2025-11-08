@@ -139,7 +139,9 @@ if instance_exists(myFloorPlat) && myFloorPlat.xspd !=0 && !place_meeting(x,y + 
 	}
 
 	//mover-se
-	x+= xspd;
+	if(state != "death"){
+		x+= xspd;
+	}
 #endregion
 
 #region//movimento vertical
@@ -693,6 +695,19 @@ switch(state){
 		if image_index >= image_number-1{
 			state = "idle";
 			dashTimer = dashTime;
+		}
+	break;
+	#endregion
+	
+	#region death
+	case "death":
+		sprite_index = deathSpr;
+		xspd = 0;
+		
+		if global.lives < 0{
+			with(obj_game){
+				gameOver = true;
+			}
 		}
 	break;
 	#endregion
