@@ -6,10 +6,10 @@ if !instance_exists(obj_transition){
 			alpha -=.01
 		}else{
 			instance_destroy(self);
-			var _sensor = instance_create_layer(483,224,"Sensors", obj_sensor);
-			_sensor.destination = rmLvl2;
-			_sensor.destinationX = global.iniX;
-			_sensor.destinationY = global.iniY;
+			var _wrap = instance_create_layer(400,225,"Sensors", obj_wrapPortal);
+			_wrap.destination = rmBoss3;
+			_wrap.destinationX = global.iniX;
+			_wrap.destinationY = global.iniY;
 		}
 	}else{
 	

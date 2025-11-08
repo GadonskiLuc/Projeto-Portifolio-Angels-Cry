@@ -1,12 +1,16 @@
 if !instance_exists(obj_transition){
 	if life <= 0{
 		instance_destroy(self);
+		
+		global.iniX = 96;
+		global.iniY = 352;
+		
 		var _dash = instance_create_layer(x,y,"Instances",obj_upgrade);
 		_dash.type = 0;
-		var _sensor = instance_create_layer(483,224,"Sensors", obj_sensor);
-		_sensor.destination = rmLvl2;
-		_sensor.destinationX = 200;
-		_sensor.destinationY = 900;
+		var _wrap = instance_create_layer(460,224,"Sensors", obj_wrapPortal);
+		_wrap.destination = rmLvl2;
+		_wrap.destinationX = global.iniX;
+		_wrap.destinationY = global.iniY;
 	}else{
 		//movimento horizontal
 		x+= xspd;
@@ -95,14 +99,20 @@ if !instance_exists(obj_transition){
 		#endregion
 	
 		if idleTimer > 0{
-			attackType = irandom(2);
+			if point_distance(x, y, obj_player.x, obj_player.y) < 50{
+				//atacar com a espada quando o player tiver perto
+				attackType = 0
+			}else{
+				//escolher o proximo ataque aleatoriamente
+				attackType = irandom(2);
+			}
 			idleTimer--;
 		}
 		if invTimer > 0{
 			invTimer--;
 		}
 
-		//state machine do boss
+		#region //state machine do boss
 		switch (state){
 			case "idle":
 				playedSound = false;
@@ -127,8 +137,11 @@ if !instance_exists(obj_transition){
 			break;
 	
 			case "attack":
+				//parar nas bordas da tela
 				if x <= 40 {xspd = 0};
 				if x >= 430 {xspd = 0};
+				
+				//ataque com espada
 				if attackType >=0 && attackType < 2{
 					attacking = true;
 					if sprite_index != spr_attack1 && sprite_index != spr_damage_on_atk{
@@ -182,8 +195,12 @@ if !instance_exists(obj_transition){
 			break;
 			
 			case "attacked":
+				if x <= 40 {xspd = 0};
+				if x >= 430 {xspd = 0};
+					
 				if attacking{
 					sprite_index = spr_damage_on_atk;
+					
 					if animation_end(){
 					state = "attack";
 				}
@@ -199,5 +216,6 @@ if !instance_exists(obj_transition){
 			break;
 
 		}
+		#endregion
 	}
 }
