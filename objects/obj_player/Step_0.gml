@@ -439,7 +439,6 @@ if(inv_timer > 0){
 	image_alpha = 1;
 }
 #endregion
-
 	
 switch(state){
 	
@@ -707,6 +706,14 @@ switch(state){
 		if global.lives < 0{
 			with(obj_game){
 				gameOver = true;
+			}
+			if confirmButton{
+				with(obj_game){
+					gameOver = false;
+					global.life = global.Maxlife;
+					global.lives = 3;
+					room_restart();
+				}
 			}
 		}
 	break;

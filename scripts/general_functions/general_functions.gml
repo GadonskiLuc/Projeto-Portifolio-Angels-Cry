@@ -35,6 +35,9 @@ function getControls(){
 	dashKey			= mouse_check_button_pressed(mb_right) + gamepad_button_check_pressed(0, gp_shoulderl);
 	dashKey			= clamp(dashKey, 0, 1);
 	
+	confirmButton = keyboard_check_pressed(vk_enter) + gamepad_button_check_pressed(0, gp_start);
+	confirmButton = clamp(confirmButton,0,1);
+	
 	//jumpkey buffering
 	if jumpKeyPressed {
 		jumpKeyBufferTimer = bufferTime;

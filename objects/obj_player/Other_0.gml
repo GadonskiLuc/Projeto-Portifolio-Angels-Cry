@@ -1,3 +1,7 @@
 if y >= room_height{
-	global.life = 0;
+	state = "death";
+	global.lives--
+	if global.lives >= 0{
+		room_restart();
+	}
 }
