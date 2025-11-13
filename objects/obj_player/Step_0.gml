@@ -712,7 +712,11 @@ switch(state){
 					gameOver = false;
 					global.life = global.Maxlife;
 					global.lives = 3;
-					room_restart();
+					if room == rmLvl2 || room == rmLvl1{
+						room_restart();
+					}else{
+						room_goto_previous()
+					}
 				}
 			}
 		}
