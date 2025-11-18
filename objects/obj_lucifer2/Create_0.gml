@@ -7,9 +7,10 @@ spr_damage_on_atk = spr_lucifer_damage_on_attack;
 
 
 xspd = 0;
+yspd = 0;
 max_xspd = 1.5;
-jumpHoldTimer = 0;
-jumpHoldTime = 30;
+airHoldTimer = 0;
+airHoldTime = 60;
 jspd = -4;
 onGround = true;
 
@@ -25,6 +26,7 @@ firstAtk = true;
 strength = 2;
 attackType = 0;
 attacking = false;
+attacked = false;
 reachedTop = false;
 
 state = "idle";

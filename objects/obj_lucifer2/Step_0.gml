@@ -8,20 +8,10 @@ if !instance_exists(obj_transition){
 		#region//movimento vertical
 			
 			if onGround {
-				jumpHoldTimer	= 0;
-			}
-			//pulo baseado no tempo em que o botão é pressionado
-			if jumpHoldTimer > 0{
-				//definindo a velocidade vertical para a velocidade de pulo constantemente
-				yspd = jspd;
-				jumpHoldTimer--;
-			}
-			
-			if onGround{	
 				yspd = 0;
+				airHoldTimer = 0;
 			}
-			
-			if !place_meeting(x, y + yspd, obj_wall){	
+			if !onGround{	
 				y += yspd;
 			}
 			
@@ -42,6 +32,9 @@ if !instance_exists(obj_transition){
 			case "idle":
 				onGround = true;
 				playedSound = false;
+				reachedTop = false;
+				airHoldTimer = 0;
+				attacked = false;
 				//parado
 				if sprite_index != spr_idle{
 					sprite_index = spr_idle;
@@ -77,16 +70,42 @@ if !instance_exists(obj_transition){
 						
 					}*/
 					if instance_exists(obj_player){
-					
-						xspd = 5* sign(-image_xscale);
-						jumpHoldTimer = jumpHoldTime;
-				
+						
+						if y > 70 && !reachedTop{
+							xspd = 5* sign(-image_xscale);
+							yspd = jspd;
+						}
 						
 						if y <= 70 && !reachedTop{
 							xspd = 0
-							yspd = 5
+							reachedTop = true;
+							airHoldTimer = airHoldTime;
 						}
-						//reachedTop = true;
+						if reachedTop{
+							xspd = 0;
+							yspd = 0;
+						}
+						if airHoldTimer > 0{
+							airHoldTimer--
+						}else if airHoldTimer <= 0 && reachedTop{
+							yspd = 5;
+							var _floor = instance_place(x, y, obj_wall);
+							if _floor{
+								y = _floor.bbox_top
+								if !attacked{
+									var _impactL = instance_create_layer(x, y, "Instances", obj_impact);
+									var _impactR = instance_create_layer(x, y, "Instances", obj_impact);
+									_impactR.right = true;
+								}
+								onGround = true;
+								attacked = true;
+								xspd = 6;
+								if x >= 430{
+									idleTimer = idleTime;
+									state = "idle"
+								}
+							}
+						}
 						
 					}
 				}else{
