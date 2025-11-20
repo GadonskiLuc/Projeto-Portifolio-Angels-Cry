@@ -26,7 +26,7 @@
   ],
   "name":"spr_lucifer2_damage",
   "nineSlice":null,
-  "origin":9,
+  "origin":7,
   "parent":{
     "name":"Lvl3",
     "path":"folders/Sprites/Bosses/Lvl3.yy",
@@ -87,7 +87,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":13,
+    "xorigin":11,
     "yorigin":52,
   },
   "swatchColours":null,

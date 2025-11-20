@@ -10,6 +10,7 @@ if alpha >= 1 {
 	
 	//posicionando o player
 	if instance_exists(obj_player){
+		obj_player.sprite_index = spr_gabriel_idle;
 		obj_player.x = destinationX;
 		obj_player.y = destinationY;
 	}

@@ -721,7 +721,6 @@ switch(state){
 						room_goto_previous()
 					}
 				}
-				state = "idle";
 			}
 		}
 	break;

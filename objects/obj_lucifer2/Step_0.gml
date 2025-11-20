@@ -83,6 +83,10 @@ if !instance_exists(obj_transition){
 						
 						if animation_end(){
 							image_index = 6;
+							if !playedSound{
+								audio_play_sound(snd_baal_charging_fire, 8, false);
+								playedSound = true;
+							}
 							
 							if y > 80 && !reachedTop{
 								xspd = 7* sign(-image_xscale);
@@ -107,6 +111,7 @@ if !instance_exists(obj_transition){
 									if _floor{
 										y = _floor.bbox_top
 										if !attacked{
+											audio_play_sound(snd_baal_atk_arm, 8, false);
 											var _impactL = instance_create_layer(x, y, "Instances", obj_impact);
 											var _impactR = instance_create_layer(x, y, "Instances", obj_impact);
 											_impactR.right = true;
@@ -127,15 +132,24 @@ if !instance_exists(obj_transition){
 					}
 				}else{
 					//segundo ataque
-					var _orb = instance_create_layer(x+(20*-image_xscale), y-sprite_height+20, "Instances", obj_blue_orb);
-					_orb.targetY = 280
-					var _orb2 = instance_create_layer(x+(20*-image_xscale), y-sprite_height+10, "Instances", obj_blue_orb);
-					_orb2.targetY = 190
-					var _orb3 = instance_create_layer(x+(20*-image_xscale), y-sprite_height, "Instances", obj_blue_orb);
-					_orb3.targetY = 100
 					
-					state = "idle";
-					idleTimer = idleTime;
+					if sprite_index != spr_attack2{
+						image_index = 0;
+						sprite_index = spr_attack2;
+						audio_play_sound(snd_lucifer_atk2, 8, false);
+					}
+					
+					if animation_end(){
+						var _orb = instance_create_layer(x+(20*-image_xscale), y-sprite_height+20, "Instances", obj_blue_orb);
+						_orb.targetY = 280
+						var _orb2 = instance_create_layer(x+(20*-image_xscale), y-sprite_height+10, "Instances", obj_blue_orb);
+						_orb2.targetY = 190
+						var _orb3 = instance_create_layer(x+(20*-image_xscale), y-sprite_height, "Instances", obj_blue_orb);
+						_orb3.targetY = 100
+					
+						state = "idle";
+						idleTimer = idleTime;
+					}
 				}
 			break;
 			
