@@ -58,7 +58,7 @@ if acceptKey{
 		case 1:
 			switch(pos){
 					case 0://sound on/off
-						/*TODO*/
+						if global.musicVolume == 1 { global.musicVolume = 0 }else	{ global.musicVolume = 1}
 						break;
 					case 1://controls
 						/*TODO*/

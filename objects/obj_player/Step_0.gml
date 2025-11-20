@@ -400,11 +400,11 @@ if instance_exists(myFloorPlat) && myFloorPlat.xspd !=0 && !place_meeting(x,y + 
 #endregion
 	
 //checar se estou preso
-image_blend = c_white;
+/*image_blend = c_white;
 
 if place_meeting(x, y, obj_wall){
 	image_blend = c_blue;
-}
+}*/
 
 //codigo para morrer se ficar preso numa parede
 /*if place_meeting(x, y ,obj_wall){
@@ -712,12 +712,16 @@ switch(state){
 					gameOver = false;
 					global.life = global.Maxlife;
 					global.lives = 3;
-					if room == rmLvl2 || room == rmLvl1{
-						room_restart();
+					if room == rmLvl2 || room == rmLvl1 || room == rmBoss3{
+						var _transition = instance_create_layer(x,y,layer,obj_transition)
+						_transition.destination = rmBoss3;
+						_transition.destinationX = global.iniX;
+						_transition.destinationY = global.iniY;
 					}else{
 						room_goto_previous()
 					}
 				}
+				state = "idle";
 			}
 		}
 	break;

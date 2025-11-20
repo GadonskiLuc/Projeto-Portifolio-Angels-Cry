@@ -15,7 +15,7 @@ option[0, 2] = "Credits";
 option[0, 3] = "Quit Game";
 
 //menu de configurações
-option[1, 0] = "Sound On/Off";
+option[1, 0] = "Music On/Off";
 option[1, 1] = "Controls";
 option[1, 2] = "Back";
 

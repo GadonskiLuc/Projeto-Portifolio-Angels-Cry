@@ -18,8 +18,13 @@ if !instance_exists(obj_transition){
 		#endregion
 	
 		if idleTimer > 0{	
-			//escolher o proximo ataque aleatoriamente
-			attackType = 0;
+			if point_distance(x, y, obj_player.x, obj_player.y) < 50{
+				//atacar com impacto quando o player tiver perto
+				attackType = 0
+			}else{
+				//escolher o proximo ataque aleatoriamente
+				attackType = irandom(2);
+			}
 			
 			idleTimer--;
 		}
@@ -72,7 +77,7 @@ if !instance_exists(obj_transition){
 					if instance_exists(obj_player){
 						
 						if y > 70 && !reachedTop{
-							xspd = 5* sign(-image_xscale);
+							xspd = 7* sign(-image_xscale);
 							yspd = jspd;
 						}
 						
@@ -88,7 +93,7 @@ if !instance_exists(obj_transition){
 						if airHoldTimer > 0{
 							airHoldTimer--
 						}else if airHoldTimer <= 0 && reachedTop{
-							yspd = 5;
+							yspd = 7;
 							var _floor = instance_place(x, y, obj_wall);
 							if _floor{
 								y = _floor.bbox_top
@@ -101,6 +106,7 @@ if !instance_exists(obj_transition){
 								attacked = true;
 								xspd = 6;
 								if x >= 430{
+									
 									idleTimer = idleTime;
 									state = "idle"
 								}
@@ -110,12 +116,22 @@ if !instance_exists(obj_transition){
 					}
 				}else{
 					//segundo ataque
+					var _orb = instance_create_layer(x+(20*-image_xscale), y-sprite_height+20, "Instances", obj_blue_orb);
+					_orb.targetY = 280
+					var _orb2 = instance_create_layer(x+(20*-image_xscale), y-sprite_height+10, "Instances", obj_blue_orb);
+					_orb2.targetY = 190
+					var _orb3 = instance_create_layer(x+(20*-image_xscale), y-sprite_height, "Instances", obj_blue_orb);
+					_orb3.targetY = 100
+					
+					state = "idle";
+					idleTimer = idleTime;
 				}
 			break;
 			
 			case "attacked":
 				if x <= 40 {xspd = 0};
 				if x >= 430 {xspd = 0};
+				yspd = 0;
 					
 				if attacking{
 					sprite_index = spr_damage_on_atk;

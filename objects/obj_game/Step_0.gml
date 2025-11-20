@@ -10,6 +10,8 @@ if global.life <= 0 {
 	if global.lives >= 0{
 		if room == rmLvl2 || room == rmLvl1{
 			room_restart();
+		}else if room == rmBoss3{
+			global.lives = -1
 		}else{
 			room_goto_previous()
 		}
@@ -27,5 +29,9 @@ if global.lives < 0{
 if gameOver{
 	global.masterVolume = 0;
 }else{
-	global.masterVolume = 1;
+	if !instance_exists(obj_transition){
+		if global.masterVolume < 1{
+			global.masterVolume += 0.1;
+		}
+	}
 }
