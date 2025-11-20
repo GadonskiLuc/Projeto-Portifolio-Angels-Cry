@@ -6,5 +6,3 @@ draw_set_alpha(alpha)
 draw_text(x,y-60,state);
 draw_text(x,y-70,idleTimer);
 draw_text(x,y-80,attackType);
-draw_text(x,y-90,airHoldTimer);
-

@@ -30,7 +30,7 @@ if !instance_exists(obj_transition){
 		}
 		if invTimer > 0{
 			invTimer--;
-		}
+		}				
 
 		#region //state machine do boss
 		switch (state){
@@ -38,7 +38,6 @@ if !instance_exists(obj_transition){
 				onGround = true;
 				playedSound = false;
 				reachedTop = false;
-				airHoldTimer = 0;
 				attacked = false;
 				//parado
 				if sprite_index != spr_idle{
@@ -63,56 +62,68 @@ if !instance_exists(obj_transition){
 			case "attack":
 				//parar nas bordas da tela
 				if x <= 40 {xspd = 0};
-				if x >= 430 {xspd = 0};
+				if x >= 450 {xspd = 0};
 				
 				//ataque com espada
 				if attackType >=0 && attackType < 2{
+					
 					attacking = true;
 					onGround = false;
-					/*if sprite_index != spr_attack1 && sprite_index != spr_damage_on_atk{
-						sprite_index = spr_attack1;
+					
+					if sprite_index != spr_attack1_1 
+					&& sprite_index != spr_damage_on_atk1 
+					&& sprite_index != spr_damage_on_atk2
+					&& !reachedTop{
+						
+						sprite_index = spr_attack1_1;
 						image_index = 0;
 						
-					}*/
+					}
 					if instance_exists(obj_player){
 						
-						if y > 70 && !reachedTop{
-							xspd = 7* sign(-image_xscale);
-							yspd = jspd;
-						}
+						if animation_end(){
+							image_index = 6;
+							
+							if y > 80 && !reachedTop{
+								xspd = 7* sign(-image_xscale);
+								yspd = jspd;
+							}
 						
-						if y <= 70 && !reachedTop{
-							xspd = 0
-							reachedTop = true;
-							airHoldTimer = airHoldTime;
-						}
-						if reachedTop{
-							xspd = 0;
-							yspd = 0;
-						}
-						if airHoldTimer > 0{
-							airHoldTimer--
-						}else if airHoldTimer <= 0 && reachedTop{
-							yspd = 7;
-							var _floor = instance_place(x, y, obj_wall);
-							if _floor{
-								y = _floor.bbox_top
-								if !attacked{
-									var _impactL = instance_create_layer(x, y, "Instances", obj_impact);
-									var _impactR = instance_create_layer(x, y, "Instances", obj_impact);
-									_impactR.right = true;
+							if y <= 80 && !reachedTop{
+								xspd = 0
+								reachedTop = true;
+							}
+							if reachedTop{
+								xspd = 0;
+								yspd = 0;
+								if sprite_index != spr_attack1_2{
+									sprite_index = spr_attack1_2;
 								}
-								onGround = true;
-								attacked = true;
-								xspd = 6;
-								if x >= 430{
+	
+								if animation_end(){
+									image_index = 5;
+									yspd = 7;
+									var _floor = instance_place(x, y, obj_wall);
+									if _floor{
+										y = _floor.bbox_top
+										if !attacked{
+											var _impactL = instance_create_layer(x, y, "Instances", obj_impact);
+											var _impactR = instance_create_layer(x, y, "Instances", obj_impact);
+											_impactR.right = true;
+										}
+										onGround = true;
+										attacked = true;
+										xspd = 6;
+										if x >= 430{
 									
-									idleTimer = idleTime;
-									state = "idle"
+											idleTimer = idleTime;
+											state = "idle"
+										}
+									}
 								}
 							}
-						}
 						
+						}
 					}
 				}else{
 					//segundo ataque
@@ -131,11 +142,18 @@ if !instance_exists(obj_transition){
 			case "attacked":
 				if x <= 40 {xspd = 0};
 				if x >= 430 {xspd = 0};
-				yspd = 0;
+				if y >= 224 {
+					yspd = 0;
+					y = 224;
+				};
+				if y < 80 {yspd = 0};
 					
 				if attacking{
-					sprite_index = spr_damage_on_atk;
-					
+					if sprite_index == spr_attack1_1{
+						sprite_index = spr_damage_on_atk1;
+					}else{
+						sprite_index = spr_damage_on_atk2
+					}				
 					if animation_end(){
 					state = "attack";
 				}
