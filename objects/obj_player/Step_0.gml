@@ -3,7 +3,7 @@
 	
 if instance_exists(obj_transition) exit;
 	
-if keyboard_check(ord("R")){
+if keyboard_check(vk_escape){
 	game_restart();
 }
 #region//sair de dentro das plataformas solidas que se posicionaram dentro do player na begin step
@@ -714,7 +714,7 @@ switch(state){
 					global.lives = 3;
 					if room == rmLvl2 || room == rmLvl1 || room == rmBoss3{
 						var _transition = instance_create_layer(x,y,layer,obj_transition)
-						_transition.destination = rmBoss3;
+						_transition.destination = room;
 						_transition.destinationX = global.iniX;
 						_transition.destinationY = global.iniY;
 					}else{

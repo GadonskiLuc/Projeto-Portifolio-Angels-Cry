@@ -38,18 +38,39 @@ if acceptKey{
 		case 0:
 			switch(pos){
 				case 0://start game
+					if (file_exists("checkpoint.ini")){
+						file_delete("checkpoint.ini");
+					}
 					var _transition = instance_create_layer(0, 0, layer, obj_transition);
 					_transition.destination  = rmLvl1;
 					_transition.destinationX = global.iniX;
 					_transition.destinationY = global.iniY;
 					break;
-				case 1://options
+				case 1://load game
+					if (file_exists("checkpoint.ini")){
+						ini_open("checkpoint.ini");
+					    global.iniX = ini_read_real("player", "iniX", global.iniX);
+					    global.iniY = ini_read_real("player", "iniY", global.iniY);
+					    global.room = ini_read_real("player", "room", global.room);
+					    global.life = ini_read_real("player", "Maxlife", global.life);
+					    global.powerUp[0] = ini_read_real("player", "dash", global.powerUp[0]);
+						global.powerUp[1] = ini_read_real("player", "defense", global.powerUp[1]);
+		
+					    ini_close();
+						
+						var _transition = instance_create_layer(0, 0, layer, obj_transition);
+						_transition.destination  = global.room;
+						_transition.destinationX = global.iniX;
+						_transition.destinationY = global.iniY;
+					}
+					break;
+				case 2://options
 					menu_level = 1;
 					break;
-				case 2://credits
+				case 3://credits
 		
 					break;
-				case 3://quit game
+				case 4://quit game
 					game_end();
 					break;
 			}
@@ -58,13 +79,30 @@ if acceptKey{
 		case 1:
 			switch(pos){
 					case 0://sound on/off
-						if global.musicVolume == 1 { global.musicVolume = 0 }else	{ global.musicVolume = 1}
+						if global.musicVolume == 1 { 
+							global.musicVolume = 0 
+							option[1, 0] = "Music Off";
+						}else{ 
+							global.musicVolume = 1
+							option[1, 0] = "Music On";
+						}
 						break;
-					case 1://controls
-						/*TODO*/
+					case 1://fullscreen
+						window_set_fullscreen( !window_get_fullscreen() );
 						break;
-					case 2://back
+					case 2://controls
+						menu_level = 2;
+						break;
+					case 3://back
 						menu_level = 0;
+						break;
+			}
+			break;
+		//menu de controles	
+		case 2:
+			switch(pos){
+					case 0://back
+						menu_level = 1
 						break;
 			}
 			break;

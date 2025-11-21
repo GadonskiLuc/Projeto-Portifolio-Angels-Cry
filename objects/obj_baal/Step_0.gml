@@ -5,6 +5,18 @@ if !instance_exists(obj_transition){
 			y+=2
 			alpha -=.01
 		}else{
+			
+			ini_open("checkpoint.ini");
+
+			ini_write_real("player", "iniX", global.iniX);
+			ini_write_real("player", "iniY", global.iniY);
+			ini_write_real("player", "room", room);
+			ini_write_real("player", "Maxlife", global.Maxlife);
+			ini_write_real("player", "dash", global.powerUp[0]);
+			ini_write_real("player", "defense", global.powerUp[1]);
+
+			ini_close();
+			
 			instance_destroy(self);
 			var _wrap = instance_create_layer(400,225,"Sensors", obj_wrapPortal);
 			_wrap.destination = rmBoss3;

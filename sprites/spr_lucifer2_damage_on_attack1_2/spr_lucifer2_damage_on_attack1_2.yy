@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"78a5aa8c-bf92-44f2-b8f2-af6692abd0a6","name":"78a5aa8c-bf92-44f2-b8f2-af6692abd0a6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"4240685e-ccfa-4f5e-941e-c4c2fa28f31c","name":"4240685e-ccfa-4f5e-941e-c4c2fa28f31c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"dda715dc-4592-4853-8287-4e637239b881","name":"dda715dc-4592-4853-8287-4e637239b881","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"8fb15e2f-4b22-455c-a31a-b9e9fc9b5547","name":"8fb15e2f-4b22-455c-a31a-b9e9fc9b5547","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"44491427-4235-408d-ad8c-1d70d5113ec8","name":"44491427-4235-408d-ad8c-1d70d5113ec8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
@@ -72,8 +72,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"78a5aa8c-bf92-44f2-b8f2-af6692abd0a6","path":"sprites/spr_lucifer2_damage_on_attack1_2/spr_lucifer2_damage_on_attack1_2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"62e6d4f4-bd28-45c0-af63-916e9bfb391a","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"4240685e-ccfa-4f5e-941e-c4c2fa28f31c","path":"sprites/spr_lucifer2_damage_on_attack1_2/spr_lucifer2_damage_on_attack1_2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"3c22e395-7245-47fa-a84b-8fbc72e8937f","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"dda715dc-4592-4853-8287-4e637239b881","path":"sprites/spr_lucifer2_damage_on_attack1_2/spr_lucifer2_damage_on_attack1_2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"94df04f6-2b75-4b17-94fc-7d4c73042cef","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
