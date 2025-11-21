@@ -29,7 +29,7 @@ function getControls(){
 	runKey			= keyboard_check(vk_shift) + gamepad_button_check(0, gp_face3);
 	runKey			= clamp(runKey, 0, 1);
 	
-	attackKey		= mouse_check_button_pressed(1) + gamepad_button_check_pressed(0, gp_face2);
+	attackKey		= mouse_check_button_pressed(1) + gamepad_button_check_pressed(0, gp_shoulderr);
 	attackKey		= clamp(attackKey, 0, 1);
 	
 	dashKey			= mouse_check_button_pressed(mb_right) + gamepad_button_check_pressed(0, gp_shoulderl);

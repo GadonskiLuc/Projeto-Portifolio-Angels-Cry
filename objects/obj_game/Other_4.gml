@@ -5,6 +5,7 @@ if room != rminit && room != rmTitleScreen{
 	        global.iniX = ini_read_real("player", "iniX", global.iniX);
 	        global.iniY = ini_read_real("player", "iniY", global.iniY);
 	        global.room = ini_read_real("player", "room", global.room);
+	        global.Maxlife = ini_read_real("player", "Maxlife", global.Maxlife);
 	        global.life = ini_read_real("player", "Maxlife", global.life);
 	        global.powerUp[0] = ini_read_real("player", "dash", global.powerUp[0]);
 			global.powerUp[1] = ini_read_real("player", "defense", global.powerUp[1]);

@@ -9,8 +9,8 @@ playedSound = false;
 pos = 0;
 
 //menu principal
-option[0, 0] = "Start Game";
-option[0, 1] = "Load Game";
+option[0, 0] = "Continue";
+option[0, 1] = "New Game";
 option[0, 2] = "Options";
 option[0, 3] = "Credits";
 option[0, 4] = "Quit Game";

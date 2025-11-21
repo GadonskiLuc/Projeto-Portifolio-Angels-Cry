@@ -37,16 +37,7 @@ if acceptKey{
 		//menu principal
 		case 0:
 			switch(pos){
-				case 0://start game
-					if (file_exists("checkpoint.ini")){
-						file_delete("checkpoint.ini");
-					}
-					var _transition = instance_create_layer(0, 0, layer, obj_transition);
-					_transition.destination  = rmLvl1;
-					_transition.destinationX = global.iniX;
-					_transition.destinationY = global.iniY;
-					break;
-				case 1://load game
+				case 0://load game
 					if (file_exists("checkpoint.ini")){
 						ini_open("checkpoint.ini");
 					    global.iniX = ini_read_real("player", "iniX", global.iniX);
@@ -63,6 +54,15 @@ if acceptKey{
 						_transition.destinationX = global.iniX;
 						_transition.destinationY = global.iniY;
 					}
+					break;
+				case 1://start game
+					if (file_exists("checkpoint.ini")){
+						file_delete("checkpoint.ini");
+					}
+					var _transition = instance_create_layer(0, 0, layer, obj_transition);
+					_transition.destination  = rmLvl1;
+					_transition.destinationX = global.iniX;
+					_transition.destinationY = global.iniY;
 					break;
 				case 2://options
 					menu_level = 1;

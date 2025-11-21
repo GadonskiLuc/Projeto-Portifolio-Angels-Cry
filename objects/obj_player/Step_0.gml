@@ -2,9 +2,11 @@
 	getControls()
 	
 if instance_exists(obj_transition) exit;
-	
-if keyboard_check(vk_escape){
-	game_restart();
+
+if global.lives >= 0{	
+	if keyboard_check(vk_escape) || confirmButton{
+		game_restart();
+	}
 }
 #region//sair de dentro das plataformas solidas que se posicionaram dentro do player na begin step
 	var _rightWall	= noone;

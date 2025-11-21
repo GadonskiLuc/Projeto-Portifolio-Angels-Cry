@@ -10,7 +10,7 @@ if !instance_exists(obj_transition){
 
 			ini_write_real("player", "iniX", global.iniX);
 			ini_write_real("player", "iniY", global.iniY);
-			ini_write_real("player", "room", room);
+			ini_write_real("player", "room", rmBoss3);
 			ini_write_real("player", "Maxlife", global.Maxlife);
 			ini_write_real("player", "dash", global.powerUp[0]);
 			ini_write_real("player", "defense", global.powerUp[1]);

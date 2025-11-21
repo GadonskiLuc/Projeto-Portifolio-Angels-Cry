@@ -25,6 +25,12 @@ draw_set_halign(fa_left);
 for(var i=0; i< op_length; i++){
 	
 	var _c = c_black
+	
+	if (menu_level == 0 && i == 0) && !file_exists("checkpoint.ini"){
+		_c = c_dkgray	
+	}
+	
 	if pos == i { _c = c_white}
+		
 	draw_text_color(x+op_border, y + op_border + op_space * i, option[menu_level, i],_c,_c,_c,_c,1);
 }
