@@ -28,7 +28,7 @@ option[2, 2] = "Left.________A (DPAD-L)";
 option[2, 3] = "Crouch______S (DPAD-D)";
 option[2, 4] = "Jump._______Space (A/X)";
 option[2, 5] = "Sprint.______Lshift (X/Square)";
-option[2, 6] = "Attack.______LMB (B/Circle)";
+option[2, 6] = "Attack.______LMB (RB/R1)";
 option[2, 7] = "Dash________RMB (LB/L1)";
 
 op_length = 0;

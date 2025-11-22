@@ -1,16 +1,21 @@
 if !instance_exists(obj_transition){
 	if life <= 0{
-		instance_destroy(self);
 		
-		global.iniX = 96;
-		global.iniY = 352;
+		sprite_index = spr_death
 		
-		var _dash = instance_create_layer(x,y,"Instances",obj_upgrade);
-		_dash.type = 0;
-		var _wrap = instance_create_layer(460,224,"Sensors", obj_wrapPortal);
-		_wrap.destination = rmLvl2;
-		_wrap.destinationX = global.iniX;
-		_wrap.destinationY = global.iniY;
+		if animation_end(){
+			instance_destroy(self);
+		
+			global.iniX = 96;
+			global.iniY = 352;
+		
+			var _dash = instance_create_layer(x,y,"Instances",obj_upgrade);
+			_dash.type = 0;
+			var _wrap = instance_create_layer(460,224,"Sensors", obj_wrapPortal);
+			_wrap.destination = rmLvl2;
+			_wrap.destinationX = global.iniX;
+			_wrap.destinationY = global.iniY;
+		}
 	}else{
 		//movimento horizontal
 		x+= xspd;

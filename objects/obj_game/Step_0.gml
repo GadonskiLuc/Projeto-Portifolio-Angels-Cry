@@ -27,7 +27,7 @@ if global.lives < 0{
 }
 
 if gameOver{
-	global.masterVolume = 0;
+	set_song_ingame(noone)
 }else{
 	if !instance_exists(obj_transition){
 		if global.masterVolume < 1{

@@ -19,7 +19,7 @@ max_xspd = 1.5;
 jspd = -5;
 onGround = true;
 
-life = 1;
+life = 15;
 
 idleTimer = 0;
 idleTime = 60;

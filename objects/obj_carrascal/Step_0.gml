@@ -29,6 +29,13 @@ if life <= 0{
 			xspd = 0;
 			state = "idle";
 		}
+		
+		if place_meeting(x + xspd, y, obj_wall) {
+			//parar
+			xspd = 0;
+			image_index = 0;
+		}
+		
 	
 		x+= xspd;
 
@@ -183,7 +190,7 @@ if life <= 0{
 				break;
 			case "attack":
 		
-				enemy_attack(spr_attack,2, 3,sprite_width/2, -sprite_height/3,2,2,self);
+				enemy_attack(spr_attack,1, 3,sprite_width/2, -sprite_height,3,3,self);
 				idleTimer = idleTime;
 			break;
 			

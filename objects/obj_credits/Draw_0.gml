@@ -1,4 +1,4 @@
-draw_set_font(font_main); // Assuming you have a font asset named fnt_credits
+draw_set_font(font_main);
 draw_set_colour(c_white);
 draw_set_halign(fa_center);
 
