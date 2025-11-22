@@ -48,7 +48,11 @@ if gameOver{
 }else{
 	barSpd = 0;
 	fontAlpha = 0;
-	if room != rmTitleScreen && room != rmCreditsScreen{
+	if room != rmTitleScreen 
+	&& room != rmCreditsScreen
+	&& room != rmLoreScreen{
+		
+		draw_set_font(font_main);
 		draw_set_alpha(1)
 		draw_sprite(spr_hpBar_back,1,35,20)
 		draw_sprite_ext(spr_hpBar_front,1,35,20,
@@ -57,22 +61,27 @@ if gameOver{
 	
 		draw_sprite(spr_gabriel_icon,1,10,10);
 		draw_set_colour(c_yellow)
-		draw_text_transformed(45,30, global.lives,2,2,0)
+		draw_text_transformed(50,40, global.lives, 1.5, 1.5,0)
 
 	}
 
 	if(instance_exists(obj_baal)){
-	
+		
 		draw_sprite(spr_hpBar_back_boss,1,65,500)
 		draw_sprite_ext(spr_hpBar_front_boss,1,65,500,
 		max(0,obj_baal.life/40),1,0,c_white,1)
-
+		
+		draw_set_colour(c_ltgray)
+		draw_text_transformed(70,502, "Baal", .8, .8,0)
 	}
 	if(instance_exists(obj_lucifer)){
-	
+		
 		draw_sprite(spr_hpBar_back_boss,1,65,500)
 		draw_sprite_ext(spr_hpBar_front_boss,1,65,500,
 		max(0,obj_lucifer.life/15),1,0,c_white,1)
+		
+		draw_set_colour(c_ltgray)
+		draw_text_transformed(90,502, "Arcanjo Lucifer", .8, .8,0)
 
 	}
 	if(instance_exists(obj_lucifer2)){
@@ -80,6 +89,8 @@ if gameOver{
 		draw_sprite(spr_hpBar_back_boss,1,65,500)
 		draw_sprite_ext(spr_hpBar_front_boss,1,65,500,
 		max(0,obj_lucifer2.life/15),1,0,c_white,1)
-
+		
+		draw_set_colour(c_ltgray)
+		draw_text_transformed(70,502, "Lucifer (Arcanjo Caido)", .8, .8,0)
 	}
 }

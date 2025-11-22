@@ -68,3 +68,4 @@ downSlopeSemiSolid = noone;
 //sprites
 spr_idle = noone;
 spr_damage = noone;
+spr_death = noone;

@@ -10,4 +10,4 @@ idleTime = 90;
 vel = 0.5;
 maxVel = 1;
 strength = 4;
-
+attacking = false;

@@ -138,6 +138,7 @@ if life <= 0{
 					sprite_index = spr_idle;
 					image_index = 0;
 				}
+				attacking = false;
 				xspd = 0;
 				//ficar parado por um tempo antes de voltar a atacar
 				var _closeToHole = !place_meeting(x + 100*face, y+1, obj_wall);
@@ -189,7 +190,7 @@ if life <= 0{
 				}
 				break;
 			case "attack":
-		
+				attacking = true;
 				enemy_attack(spr_attack,1, 3,sprite_width/2, -sprite_height,3,3,self);
 				idleTimer = idleTime;
 			break;
@@ -198,7 +199,11 @@ if life <= 0{
 				sprite_index = spr_damage;
 		
 				if animation_end(){
-					state = "idle";
+					if attacking{
+						state = "attack";
+					}else{
+						state = "idle";
+					}
 				}
 				
 			break;

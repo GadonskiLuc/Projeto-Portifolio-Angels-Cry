@@ -2,10 +2,11 @@ if !instance_exists(obj_transition){
 	if life <= 0{
 		sprite_index = spr_death
 		if animation_end(){
+			global.finished = true;
 			instance_destroy(self);
-			instance_destroy(obj_player);
 			var _transition = instance_create_layer(x,y,"Controllers",obj_transition);
-			_transition.destination = rmCreditsScreen;
+			_transition.destination = rmLoreScreen;
+			instance_destroy(obj_player);
 		}
 	}else{
 		//movimento horizontal
@@ -168,6 +169,7 @@ if !instance_exists(obj_transition){
 				};
 				if y < 80 {yspd = 0};
 					
+				invTimer = invTime;
 				if attacking{
 					if sprite_index == spr_attack1_1{
 						sprite_index = spr_damage_on_atk1;

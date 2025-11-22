@@ -59,10 +59,9 @@ if acceptKey{
 					if (file_exists("checkpoint.ini")){
 						file_delete("checkpoint.ini");
 					}
+					global.finished = false;
 					var _transition = instance_create_layer(0, 0, layer, obj_transition);
-					_transition.destination  = rmLvl1;
-					_transition.destinationX = global.iniX;
-					_transition.destinationY = global.iniY;
+					_transition.destination  = rmLoreScreen;
 					break;
 				case 2://options
 					menu_level = 1;
@@ -81,10 +80,10 @@ if acceptKey{
 					case 0://sound on/off
 						if global.musicVolume == 1 { 
 							global.musicVolume = 0 
-							option[1, 0] = "Music Off";
+							option[1, 0] = "Musica: Nao";
 						}else{ 
 							global.musicVolume = 1
-							option[1, 0] = "Music On";
+							option[1, 0] = "Musica: Sim";
 						}
 						break;
 					case 1://fullscreen
