@@ -1,4 +1,4 @@
-if room != rminit && room != rmTitleScreen{
+if room != rminit && room != rmTitleScreen && room != rmCreditsScreen{
 	if file_exists("checkpoint.ini")
 	&& room != rmBoss2 && room != rmBoss1{
 	        ini_open("checkpoint.ini");

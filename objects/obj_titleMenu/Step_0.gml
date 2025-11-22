@@ -68,7 +68,7 @@ if acceptKey{
 					menu_level = 1;
 					break;
 				case 3://credits
-		
+					room_goto(rmCreditsScreen);
 					break;
 				case 4://quit game
 					game_end();

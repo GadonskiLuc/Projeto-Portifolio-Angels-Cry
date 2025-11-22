@@ -8,6 +8,7 @@ spr_attack1_2 = spr_lucifer2_attack1_2;
 spr_attack2 = spr_lucifer2_attack2;
 spr_damage_on_atk1 = spr_lucifer2_damage_on_attack1_1;
 spr_damage_on_atk2 = spr_lucifer2_damage_on_attack1_2;
+spr_death = spr_lucifer2_death
 
 alpha = 1;
 playedSound = false;
@@ -18,7 +19,7 @@ max_xspd = 1.5;
 jspd = -5;
 onGround = true;
 
-life = 15;
+life = 1;
 
 idleTimer = 0;
 idleTime = 60;

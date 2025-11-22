@@ -1,6 +1,12 @@
 if !instance_exists(obj_transition){
 	if life <= 0{
-		instance_destroy(self);
+		sprite_index = spr_death
+		if animation_end(){
+			instance_destroy(self);
+			instance_destroy(obj_player);
+			var _transition = instance_create_layer(x,y,"Controllers",obj_transition);
+			_transition.destination = rmCreditsScreen;
+		}
 	}else{
 		//movimento horizontal
 		x+= xspd;

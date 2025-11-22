@@ -48,7 +48,7 @@ if gameOver{
 }else{
 	barSpd = 0;
 	fontAlpha = 0;
-	if room != rmTitleScreen{
+	if room != rmTitleScreen && room != rmCreditsScreen{
 		draw_set_alpha(1)
 		draw_sprite(spr_hpBar_back,1,35,20)
 		draw_sprite_ext(spr_hpBar_front,1,35,20,
