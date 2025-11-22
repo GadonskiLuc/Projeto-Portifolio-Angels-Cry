@@ -27,7 +27,7 @@ if life <= 0{
 		if place_meeting(x + 150, y, obj_wall) {
 			//parar
 			xspd = 0;
-			state = "idle";
+			image_index = 0;
 		}
 		
 		if place_meeting(x + xspd, y, obj_wall) {
@@ -191,14 +191,16 @@ if life <= 0{
 				break;
 			case "attack":
 				attacking = true;
-				enemy_attack(spr_attack,1, 3,sprite_width/2, -sprite_height,3,3,self);
+				enemy_attack(spr_attack,2, 3,sprite_width/2, sprite_height/2,3,3,self);
+				enemy_attack(spr_attack,3, 4,sprite_width/2, -sprite_height,3,3,self);
 				idleTimer = idleTime;
 			break;
 			
 			case "attacked":
 				sprite_index = spr_damage;
-		
+				
 				if animation_end(){
+					invTimer = invTime;
 					if attacking{
 						state = "attack";
 					}else{

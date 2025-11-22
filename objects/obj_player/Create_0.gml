@@ -73,7 +73,7 @@ inv_time = 90;
 
 // pulo
 	grav				=	 .275;
-	termVel				=		4;
+	termVel				=		6;
 	onGround			=	 true;
 	planing				=	false;
 	jumpMax				=		1;

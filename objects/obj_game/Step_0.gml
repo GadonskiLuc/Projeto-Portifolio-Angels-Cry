@@ -28,6 +28,12 @@ if global.lives < 0{
 
 if gameOver{
 	set_song_ingame(noone)
+	if room != rmBoss3{
+		ini_open("checkpoint.ini");
+	    ini_write_real("player", "iniX", obj_playerSpawn.x);
+		ini_write_real("player", "iniY", obj_playerSpawn.y);
+		ini_close();
+	}
 }else{
 	if !instance_exists(obj_transition){
 		if global.masterVolume < 1{

@@ -7,6 +7,8 @@ spr_damage = spr_carrascal_damage
 
 idleTimer = 0;
 idleTime = 90;
+invTime = 30;
+invTimer = 0;
 vel = 0.5;
 maxVel = 1;
 strength = 4;

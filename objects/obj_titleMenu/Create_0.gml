@@ -22,14 +22,14 @@ option[1, 2] = "Controles";
 option[1, 3] = "Voltar";
 
 //menu de controles
-option[2, 0] = "Voltar_______Teclado(Controle)";
+option[2, 0] = "Voltar_______Teclado (X360)";
 option[2, 1] = "Direita._______D (DPAD-R)";
 option[2, 2] = "Esquerda.________A (DPAD-L)";
 option[2, 3] = "Agaixar______S (DPAD-D)";
-option[2, 4] = "Pular._______Space (A/X)";
-option[2, 5] = "Correr.______Lshift (X/Square)";
-option[2, 6] = "Atacar.______LMB (RB/R1)";
-option[2, 7] = "Dash________RMB (LB/L1)";
+option[2, 4] = "Pular._______Space (A)";
+option[2, 5] = "Correr.______Lshift (X)";
+option[2, 6] = "Atacar.______LMB (RB)";
+option[2, 7] = "Dash________RMB (LB)";
 
 op_length = 0;
 

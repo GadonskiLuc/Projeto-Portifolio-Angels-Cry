@@ -14,6 +14,7 @@
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"7a1d2361-e760-41cd-be6e-4dd4304e331b","name":"7a1d2361-e760-41cd-be6e-4dd4304e331b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"883030d3-60ce-4381-94fa-3566c8a5480c","name":"883030d3-60ce-4381-94fa-3566c8a5480c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"8d7de439-be47-4269-a949-5966d5607af9","name":"8d7de439-be47-4269-a949-5966d5607af9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"47ddf5c5-86b9-4772-b83b-79df82d24b45","name":"47ddf5c5-86b9-4772-b83b-79df82d24b45","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"c55aad75-4a71-4624-8179-107b36ba6332","name":"c55aad75-4a71-4624-8179-107b36ba6332","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
@@ -52,7 +53,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":4.0,
+    "length":5.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -80,11 +81,14 @@
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"883030d3-60ce-4381-94fa-3566c8a5480c","path":"sprites/spr_carrascal_attack/spr_carrascal_attack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"1d67a197-389f-4ea2-9fad-875cbec77ffb","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8d7de439-be47-4269-a949-5966d5607af9","path":"sprites/spr_carrascal_attack/spr_carrascal_attack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"2b73bf97-6655-4bf5-aadd-63e7565b6d31","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"47ddf5c5-86b9-4772-b83b-79df82d24b45","path":"sprites/spr_carrascal_attack/spr_carrascal_attack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"0fe2ef5d-32c9-4e31-a30d-2495ba86fd7f","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"0fe2ef5d-32c9-4e31-a30d-2495ba86fd7f","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c55aad75-4a71-4624-8179-107b36ba6332","path":"sprites/spr_carrascal_attack/spr_carrascal_attack.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"66d73166-8a00-406a-b964-844736275dfb","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+              },"Disabled":false,"id":"66d73166-8a00-406a-b964-844736275dfb","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
