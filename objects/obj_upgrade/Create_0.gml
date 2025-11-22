@@ -1,0 +1,1 @@
+dashType = spr_upgrade_dash;

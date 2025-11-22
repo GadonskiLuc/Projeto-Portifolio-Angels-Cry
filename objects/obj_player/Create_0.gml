@@ -9,33 +9,6 @@ function setOnGround(_val = false){
 	}
 }
 
-function checkForSemisolidePlatform(_x, _y){
-	//variavel de retorno
-	var _rtrn = noone;
-	
-	//nao estamos subindo, ai checamos uma colisao normalmente
-	if yspd >= 0 && place_meeting(_x, _y, obj_semiSolidWall){
-		//criar uma dslist para guardar todas as instancias de colisao com a obj_semiSolidWall
-		var _list = ds_list_create();
-		var _listSize = instance_place_list(_x,_y, obj_semiSolidWall, _list, false);
-		
-		//percorrer pela lista e retornar apenas a plataforma que esata abaixo do player
-		for(var i = 0; i< _listSize; i++){
-			var _listInst = _list[| i];
-			if _listInst != forgetSemiSolid && floor(bbox_bottom) <= ceil(_listInst.bbox_top - _listInst.yspd){
-				//retornar o id da plataforma
-				_rtrn = _listInst;
-				//sair do loop mais cedo
-				i = _listSize;
-			}
-		}
-		//destruir a lista para economizar memoria
-		ds_list_destroy(_list);
-	}
-	//retornar a variavel
-	return _rtrn;
-}
-
 function setPlaning(_val = false){
 	if _val == true{
 		planing = true;
@@ -50,10 +23,14 @@ function setPlaning(_val = false){
 maskSpr		= spr_gabriel_idle;
 idleSpr		= spr_gabriel_idle;
 walkSpr		= spr_gabriel_walk;
-runSpr		= spr_gabriel_walk;
+runSpr		= spr_gabriel_run;
 jumpSpr		= spr_gabriel_jump;
-crouchSpr	= spr_maria_crouch;
-depth		= -30;
+crouchSpr	= spr_gabriel_crouch;
+attackSpr	= spr_gabriel_attack_slash;
+airAtkSpr	= spr_gabriel_attack_air;
+dashSpr		= spr_gabriel_dash;
+deathSpr	= spr_gabriel_death;
+depth		= 100;
 
 
 // movimento
@@ -66,19 +43,24 @@ moveSpd[0] = 2;
 moveSpd[1] = 3.5;
 xspd	= 0;
 yspd	= 0;
+dashSpd = 10;
 
 //variaveis de estado
 crouching = false;
 getting_damage = false;
 hitByAttack = ds_list_create();
+attack = 1;
+damage = noone;
+playedSound = false
+playedSoundAtk = false
+playedSoundDmg = false
+
+//dash
+dashTime = 30;
+dashTimer = 0;
 
 //scripts de estado
-enum PLAYERSTATE{
-	FREE,
-	ATTACK_SLASH,
-	ATTACK_COMBO
-}
-state = PLAYERSTATE.FREE;
+state = "idle";
 
 //dano
 damage_timer = 0;
@@ -91,7 +73,7 @@ inv_time = 90;
 
 // pulo
 	grav				=	 .275;
-	termVel				=		4;
+	termVel				=		6;
 	onGround			=	 true;
 	planing				=	false;
 	jumpMax				=		1;
@@ -113,7 +95,6 @@ inv_time = 90;
 		coyoteJumpFrames	=	5;
 		
 //plataformas moveis
-inFloorPlat			= 0;
 myFloorPlat			= noone;
 earlyMoveplatXspd	= false;
 downSlopeSemiSolid	= noone;
