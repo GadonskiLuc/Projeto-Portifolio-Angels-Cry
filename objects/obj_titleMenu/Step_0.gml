@@ -1,16 +1,26 @@
 //configurando inputs
-downKey			= keyboard_check_pressed(ord("S")) + gamepad_button_check_pressed(0, gp_padd);
+downKey			= keyboard_check_pressed(ord("S")) + keyboard_check_pressed(vk_down) + gamepad_button_check_pressed(0, gp_padd);
 downKey			= clamp(downKey, 0, 1);
-upKey			= keyboard_check_pressed(ord("W")) + gamepad_button_check_pressed(0, gp_padu);
+upKey			= keyboard_check_pressed(ord("W")) + keyboard_check_pressed(vk_up) + gamepad_button_check_pressed(0, gp_padu);
 upKey			= clamp(upKey, 0, 1);
-acceptKey		= keyboard_check_pressed(vk_space) + gamepad_button_check_pressed(0, gp_face1);
+acceptKey		= keyboard_check_pressed(vk_enter) + gamepad_button_check_pressed(0, gp_face1);
 acceptKey		= clamp(acceptKey, 0, 1);
+backKey			= keyboard_check_pressed(vk_backspace) + gamepad_button_check_pressed(0, gp_face2);
+backKey			= clamp(backKey, 0, 1);
 
 //guardar quantidade de opções no menu atual
 op_length = array_length(option[menu_level])
 
 //percorrer o menu
 pos += downKey - upKey;
+
+//voltar
+if backKey && menu_level > 0{
+	audio_play_sound(snd_menu_select,8,false);
+	menu_level--;
+	//tamanho correto do menu
+	op_length = array_length(option[menu_level])
+}
 
 //sfx de opções
 if (downKey || upKey) && !playedSound {
