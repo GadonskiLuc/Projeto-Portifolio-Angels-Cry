@@ -62,6 +62,10 @@ if gameOver{
 		draw_sprite(spr_gabriel_icon,1,10,10);
 		draw_set_colour(c_yellow)
 		draw_text_transformed(50,40, global.lives, 1.5, 1.5,0)
+		
+		if global.powerUp[0]{
+			draw_sprite_ext(spr_dash_icon, 1, 90, 70, 1, 1, 0, c_white, 1);
+		}
 
 	}
 

@@ -16,4 +16,11 @@ ini_write_real("player", "defense", global.powerUp[1]);
 
 ini_close();
 
+if room == rmBoss1{
+	var _wrap = instance_create_layer(460,224,"Sensors", obj_wrapPortal);
+	_wrap.destination = rmLvl2;
+	_wrap.destinationX = global.iniX;
+	_wrap.destinationY = global.iniY;
+}
+
 instance_destroy(self);

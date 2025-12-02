@@ -11,10 +11,6 @@ if !instance_exists(obj_transition){
 		
 			var _dash = instance_create_layer(x,y,"Instances",obj_upgrade);
 			_dash.type = 0;
-			var _wrap = instance_create_layer(460,224,"Sensors", obj_wrapPortal);
-			_wrap.destination = rmLvl2;
-			_wrap.destinationX = global.iniX;
-			_wrap.destinationY = global.iniY;
 		}
 	}else{
 		//movimento horizontal

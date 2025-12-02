@@ -155,6 +155,7 @@
     {"id":{"name":"spr_cloud2","path":"sprites/spr_cloud2/spr_cloud2.yy",},},
     {"id":{"name":"spr_cloud3","path":"sprites/spr_cloud3/spr_cloud3.yy",},},
     {"id":{"name":"spr_damage_HB","path":"sprites/spr_damage_HB/spr_damage_HB.yy",},},
+    {"id":{"name":"spr_dash_icon","path":"sprites/spr_dash_icon/spr_dash_icon.yy",},},
     {"id":{"name":"spr_gabriel_attack_air","path":"sprites/spr_gabriel_attack_air/spr_gabriel_attack_air.yy",},},
     {"id":{"name":"spr_gabriel_attack_slash_HB","path":"sprites/spr_gabriel_attack_slash_HB/spr_gabriel_attack_slash_HB.yy",},},
     {"id":{"name":"spr_gabriel_attack_slash","path":"sprites/spr_gabriel_attack_slash/spr_gabriel_attack_slash.yy",},},
